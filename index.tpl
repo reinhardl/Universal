@@ -40,25 +40,7 @@
     <![endif]-->
    
 {* HEADER IMAGE *}
-    {if $view=="entry"}
-        {if $entry.properties.entry_specific_header_image}
-            <style type="text/css">.intro-header {ldelim}background-image: url('{$entry.properties.entry_specific_header_image}');{rdelim}</style>         
-        {else}
-            <style type="text/css">.intro-header {ldelim}background-image: url('{if $template_option.entry_default_header_image}{$template_option.entry_default_header_image}{else}{serendipity_getFile file="img/post-bg.jpg"}{/if}');{rdelim}</style> 
-        {/if}
-    {elseif $staticpage_pagetitle && !$plugin_contactform_name}
-        {if $staticpage_custom.staticpage_header_image}
-            <style type="text/css">.intro-header {ldelim}background-image: url('{$staticpage_custom.staticpage_header_image}');{rdelim}</style>           
-        {else}
-            <style type="text/css">.intro-header {ldelim}background-image: url('{if $template_option.staticpage_header_image}{$template_option.staticpage_header_image}{else}{serendipity_getFile file="img/about-bg.jpg"}{/if}');{rdelim}</style>
-        {/if}
-    {elseif $plugin_contactform_name}
-        <style type="text/css">.intro-header {ldelim}background-image: url('{if $template_option.contactform_header_image}{$template_option.contactform_header_image}{else}{serendipity_getFile file="img/contact-bg.jpg"}{/if}');{rdelim}</style>
-    {elseif $view=="archive"}
-        <style type="text/css">.intro-header {ldelim}background-image: url('{if $template_option.archive_header_image}{$template_option.archive_header_image}{else}{serendipity_getFile file="img/archive-bg.jpg"}{/if}');{rdelim}</style>    
-    {else}
-        <style type="text/css">.intro-header {ldelim}background-image: url('{if $template_option.default_header_image}{$template_option.default_header_image}{else}{serendipity_getFile file="img/home-bg.jpg"}{/if}');{rdelim}</style>
-    {/if}
+  
     {serendipity_hookPlugin hook="frontend_header"}
     <script src="{$head_link_script}"></script>
 </head>
