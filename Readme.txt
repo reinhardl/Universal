@@ -1,3 +1,3 @@
 not finished
-Template fürSerendipity
+Template for Serendipity
 s9y.org
