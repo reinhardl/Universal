@@ -71,7 +71,7 @@
                 </div>
             </div>
         </nav>
-    {/if} 
+    {/if} dddddddddddddd<br/><br/><br/><br/><br/> 
     <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
