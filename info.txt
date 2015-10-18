@@ -1,0 +1,5 @@
+Name: Universal
+Author: s9y theme by rl.  
+Date:  
+Require Serendipity: 2.0
+Backend: No
