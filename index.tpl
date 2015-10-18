@@ -39,7 +39,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
    
-{* HEADER IMAGE *}
+ 
   
     {serendipity_hookPlugin hook="frontend_header"}
     <script src="{$head_link_script}"></script>
