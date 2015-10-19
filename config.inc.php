@@ -253,6 +253,13 @@ $template_config = array(
         'type'          => 'boolean',
         'default'       => false,
     ),	
+	array(
+      'var'           => 'catlead_seq',
+      'name'          => CAT_LEAD_SEQ,
+      'type'          => 'select',
+      'default'       => '',
+      'select_values' => array('1','2','3','4','5','6','7','8','9'),
+    ),
     array(
         'var'           => 'enable_workers',
         'name'          => ENABLE_WORKERS,
@@ -702,7 +709,7 @@ for ($i = 0; $i < $template_loaded_config['rlslider1_amount']; $i++) {
 	array_push($slider_collapse,'slider1' . $i . 'rlslider_intro' , 'slider1' . $i . 'text1' ,'slider1' . $i . 'text2' ,'slider1' . $i . 'bg_img' ,'slider1' . $i . 'morem');
 }
  
-$startpagerows_collapse = array('startpage_instructions','lead_cat_windowsinfo', 'enable_catlead','catlead_textcount','catlead','startpage_cat_windowsinfo','startpagerows_enable','startpage_cat_windows','displaycatname');
+$startpagerows_collapse = array('startpage_instructions','lead_cat_windowsinfo', 'enable_catlead','catlead_seq','catlead_textcount','catlead','startpage_cat_windowsinfo','startpagerows_enable','startpage_cat_windows','displaycatname');
 for ($i = 0; $i < $template_loaded_config['startpage_cat_windows']; $i++) {
 	array_push($startpagerows_collapse, 'startpagerow'.$i.'cat_intro',		'startpagerow' . $i . 'win_column',	'startpagerow' . $i . 'title_text',	'startpagerow' . $i . 'truncated_qty',	'startpagerow' . $i . 'titlesonly_qty',	'startpagerow' . $i . 'thedesign','startpagerow' . $i . 'the_title',	'startpagerow' . $i . 'catdescription',	'startpagerow' . $i . 'show_title',	'startpagerow' . $i . 'kategorie'  );
 }
