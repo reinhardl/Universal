@@ -39,8 +39,10 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
    
- 
-  
+{* HEADER IMAGE *}
+   {if $startpage =='true' && $view == 'start' && $staticpage_pagetitle == '' } 
+   <link href="{$serendipityBaseURL}/templates/Universal-master/css/mySlider.css" rel="stylesheet">   
+     {/if}
     {serendipity_hookPlugin hook="frontend_header"}
     <script src="{$head_link_script}"></script>
 </head>
@@ -71,7 +73,7 @@
                 </div>
             </div>
         </nav>
-    {/if} dddddddddddddd<br/><br/><br/><br/><br/> 
+    {/if}  <br/><br/><br/><br/><br/> 
     <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -97,7 +99,9 @@
             </div>
         </div>
     </div>
-    <header class="intro-header" role="banner">
+    
+
+	<header class="intro-header" role="banner">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -114,24 +118,70 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header> 
 {* MAIN CONTENT *}
-    <main id="maincontent" class="container" role="main">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            {if $view=='404'}
-                <p class="alert alert-danger alert-error"><span class="fa-stack" aria-hidden="true"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-exclamation fa-stack-1x"></i></span> {$CONST.ERROR_404}</p>
-                <nav role="navigation">
-                    <ul class="pager">                
-                        <li class="previous"><a href="{$serendipityBaseURL}">{$CONST.HOMEPAGE} - {$blogTitle}</a></li>
-                    </ul>
-                </nav>
-            {else}
-                {$CONTENT}
-            {/if}
-            </div>
-        </div>
-    </main>
+
+ 
+ <main id="maincontent" class="container" role="main">
+ 
+ {if $startpage =='true' && $view == 'start' && $staticpage_pagetitle == '' } 
+
+ 
+             
+             {* Startpage*}
+			{for $sequence=0 to 9}
+			
+			
+				{* CatLead*}
+				{if $template_option.catlead_seq== $sequence && $template_option.enable_catlead =="true"}			    	
+						<div id="lead1" ">
+							{serendipity_fetchPrintEntries category=$template_option.catlead full=true fetchDrafts=false noSticky=true limit="0,1" template="entries_lead.tpl"}
+						</div><!-- /#lead -->
+						<hr>
+				{/if}
+				
+	 						
+				{* LatestPosts*}
+				{if  $template_option.latestPost_seq== $sequence && $template_option.latestPost_enable=="true" }	
+					<div class="section">
+						<div class="container">
+							<div class="row">
+								{serendipity_fetchPrintEntries limit="0,3" entryprops="entry_specific_header_image != ''" category=$template_option.latestPost_cat1 noCache=false fetchDrafts=false full=true use_footer=false noSticky=true  template="entries_latestPosts.tpl"}                      
+								{serendipity_fetchPrintEntries category=$template_option.latestPost_cat2 entryprops="entry_category.category_name != 'K1'" full=true fetchDrafts=false noSticky=true limit="0,3" template="entries_latestNews.tpl"}
+							</div>
+						</div>
+					</div>	
+					<hr>
+				{/if}			
+
+
+				{* Slider*}
+				{if $template_option.rlslider1_seq== $sequence && $template_option.rlslider1_enable =="true"}			    	
+						 {include file='include/mySlider.tpl'}
+						<br/>
+				{/if}				
+ 
+			{/for}	
+				
+				
+         
+  {else}{* normaler Content *}
+	{if $view=='404'}
+          <p class="alert alert-danger alert-error"><span class="fa-stack" aria-hidden="true"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-exclamation fa-stack-1x"></i></span> {$CONST.ERROR_404}</p>
+           <nav role="navigation">
+               <ul class="pager">                
+                    <li class="previous"><a href="{$serendipityBaseURL}">{$CONST.HOMEPAGE} - {$blogTitle}</a></li>
+               </ul>
+            </nav>
+     {else}
+         {$CONTENT}
+      {/if}
+ {/if}	
+ </main>
+	
+	
+	
+	
     <hr>
 {* FOOTER *}
     <footer class="page-footer" role="contentinfo">
@@ -205,6 +255,23 @@
             </div>
         </div>
     </footer>
+	
+	
+	
+	
+ <br/>	$startpage= {$startpage}
+ <br/>$view={$view}<--
+ <br/> $template_option.google_map_staticpage={$template_option.google_map_staticpage}
+ <br/>$template_option.googlemap_support={$template_option.googlemap_support}
+ <br/>  $currpage={$currpage}
+ <br/>  $currpage2={$currpage2}
+ <br/>  $seite={$seite} 
+ <br/>$template_option.bootstrap={$template_option.bootstrap}
+ <br/>$serendipityBaseURL={$serendipityBaseURL}
+	
+	
+	<script src="{$serendipityBaseURL}/templates/Universal-master/js/mySlider.js"></script>
+	
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
  
 {/if}

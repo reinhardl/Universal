@@ -232,7 +232,15 @@ $template_config = array(
         'name'          => LATEST_POST_WITH_PIC2,
         'type'          => 'boolean',
         'default'       => false,
-    ),		
+    ),	
+	array(
+      'var'           => 'latestPost_seq',
+      'name'          => REIHENFOLGE,
+	  'description'   => REIHENFOLGE_DESC,
+      'type'          => 'select',
+      'default'       => '3',
+      'select_values' => array('1','2','3','4','5','6','7','8','9'),
+    ),	
 	
      array(
         'var'           => 'catlead_textcount',
@@ -255,9 +263,10 @@ $template_config = array(
     ),	
 	array(
       'var'           => 'catlead_seq',
-      'name'          => CAT_LEAD_SEQ,
+      'name'          => REIHENFOLGE,
       'type'          => 'select',
-      'default'       => '',
+      'default'       => '2',
+	  	  'description'   => REIHENFOLGE_DESC,
       'select_values' => array('1','2','3','4','5','6','7','8','9'),
     ),
     array(
@@ -552,6 +561,14 @@ $template_config = array(
         'type'          => 'boolean',
         'default'       => 'true'
     ),	
+		array(
+      'var'           => 'rlslider1_seq',
+      'name'          => REIHENFOLGE,
+	  'description'   => REIHENFOLGE_DESC,	  
+      'type'          => 'select',
+      'default'       => '1',
+      'select_values' => array('1','2','3','4','5','6','7','8','9'),
+    ),
 	    array(
         'var'           => 'businessgallery1_amount',
         'name'          => BUSINESSGALLERY_AMOUNT,
@@ -702,11 +719,11 @@ for ($i = 0; $i < $template_loaded_config['amount']; $i++) {
 	array_push($navlinks_collapse, 'navlink' . $i . 'text' ,'navlink' . $i . 'url');
 }
 
-$latestPosts_collapse =array('latestPost_description','latestPost_enable','latestPost_header1','latestPost_header2','latestPost_cat1','latestPost_cat2','latestPost_amount1','latestPost_amount2','latestPost_textcount1','latestPost_textcount2','latestPost_with_pic1','latestPost_with_pic2');
+$latestPosts_collapse =array('latestPost_description','latestPost_enable','latestPost_seq','latestPost_header1','latestPost_header2','latestPost_cat1','latestPost_cat2','latestPost_amount1','latestPost_amount2','latestPost_textcount1','latestPost_textcount2','latestPost_with_pic1','latestPost_with_pic2');
 
-$slider_collapse = array('rlslider1_enable', 'rlslider1_amount');
+$slider_collapse = array('rlslider1_enable','rlslider1_seq', 'rlslider1_amount');
 for ($i = 0; $i < $template_loaded_config['rlslider1_amount']; $i++) {
-	array_push($slider_collapse,'slider1' . $i . 'rlslider_intro' , 'slider1' . $i . 'text1' ,'slider1' . $i . 'text2' ,'slider1' . $i . 'bg_img' ,'slider1' . $i . 'morem');
+	array_push($slider_collapse,'slider1' . $i . 'rlslider_intro' , 'slider1' . $i . 'text1' ,'slider1' . $i . 'text2' ,'slider1' . $i. 'text3' ,'slider1' .$i . 'bg_img' ,'slider1' . $i . 'morem');
 }
  
 $startpagerows_collapse = array('startpage_instructions','lead_cat_windowsinfo', 'enable_catlead','catlead_seq','catlead_textcount','catlead','startpage_cat_windowsinfo','startpagerows_enable','startpage_cat_windows','displaycatname');
@@ -769,7 +786,13 @@ for ($i = 0; $i < $template_loaded_config['rlslider1_amount']; $i++) {
         'name'          => SLIDER_TEXT2,
         'type'          => 'string',
         'default'       => 'Text2 Slide' . $i,
-        );		
+        );	
+    $template_config[] = array(
+        'var'           => 'slider1' . $i . 'text3',
+        'name'          => SLIDER_TEXT3,
+        'type'          => 'string',
+        'default'       => 'Text3 Slide' . $i,
+        );			
     $template_config[] = array(
         'var'           => 'slider1' . $i . 'bg_img',
         'name'          => BG_IMG,
@@ -786,7 +809,8 @@ for ($i = 0; $i < $template_loaded_config['rlslider1_amount']; $i++) {
     $sliders1[] = array(
         'rlslider_intro' => $template_loaded_config['slider1' . $i . 'rlslider_intro'],
         'text1'         => $template_loaded_config['slider1' . $i . 'text1'],
-        'text2'         => $template_loaded_config['slider1' . $i . 'text2'],		
+        'text2'         => $template_loaded_config['slider1' . $i . 'text2'],	
+        'text3'         => $template_loaded_config['slider1' . $i . 'text3'],		
         'bg_img'          => $template_loaded_config['slider1' . $i . 'bg_img'],
         'morem'          => $template_loaded_config['slider1' . $i . 'morem'],		
  

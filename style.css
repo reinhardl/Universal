@@ -1,1 +1,26 @@
- 
+.show-grid [class^="col-"]
+{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgba(86, 61, 124, 0.15);
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: rgba(86, 61, 124, 0.2);
+  border-right-color: rgba(86, 61, 124, 0.2);
+  border-bottom-color: rgba(86, 61, 124, 0.2);
+  border-left-color: rgba(86, 61, 124, 0.2);
+  border-image-source: none;
+  border-image-slice: 100% 100% 100% 100%;
+  border-image-width: 1 1 1 1;
+  border-image-outset: 0 0 0 0;
+  border-image-repeat: stretch stretch;
+} 
+
+.maxPicHeight {
+	max-height: 110px; }
