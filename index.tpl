@@ -257,18 +257,7 @@
     </footer>
 	
 	
-	
-	
- <br/>	$startpage= {$startpage}
- <br/>$view={$view}<--
- <br/> $template_option.google_map_staticpage={$template_option.google_map_staticpage}
- <br/>$template_option.googlemap_support={$template_option.googlemap_support}
- <br/>  $currpage={$currpage}
- <br/>  $currpage2={$currpage2}
- <br/>  $seite={$seite} 
- <br/>$template_option.bootstrap={$template_option.bootstrap}
- <br/>$serendipityBaseURL={$serendipityBaseURL}
-	
+ 
 	
 	<script src="{$serendipityBaseURL}/templates/Universal-master/js/mySlider.js"></script>
 	
