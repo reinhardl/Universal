@@ -146,8 +146,16 @@
 					<div class="section">
 						<div class="container">
 							<div class="row">
+							category=$template_option.latestPost_cat1={$template_option.latestPost_cat1} <br/>
+							category=$template_option.latestPost_cat2={$template_option.latestPost_cat2}<br/>
+							
 								{serendipity_fetchPrintEntries limit="0,3" entryprops="entry_specific_header_image != ''" category=$template_option.latestPost_cat1 noCache=false fetchDrafts=false full=true use_footer=false noSticky=true  template="entries_latestPosts.tpl"}                      
-								{serendipity_fetchPrintEntries category=$template_option.latestPost_cat2 entryprops="entry_category.category_name != 'K1'" full=true fetchDrafts=false noSticky=true limit="0,3" template="entries_latestNews.tpl"}
+								{* Show entries Latest News: If choose no category in theme config *}
+								{if $template_option.latestPost_cat2 =="0"}
+									{serendipity_fetchPrintEntries   entryprops="entry_category.category_name != 'K1'" full=true fetchDrafts=false noSticky=true limit="0,3" template="entries_latestNews.tpl"}
+								{else}
+									{serendipity_fetchPrintEntries   category=$template_option.latestPost_cat2  full=true fetchDrafts=false noSticky=true limit="0,3" template="entries_latestNews.tpl"}
+								{/if}
 							</div>
 						</div>
 					</div>	

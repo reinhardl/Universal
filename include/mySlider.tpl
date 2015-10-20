@@ -6,6 +6,11 @@
 			<div class="item {if $smarty.foreach.slider.first} active{/if}">
 				<img src="{$slider1.bg_img}">
 					<div class="carousel-caption">
+														{If $is_logged_in == '1'} 
+									
+										<a class=" btn-primary btn-xs" href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=templates&serendipity[adminAction]=editConfiguration" role="button">Theme-Config</a>								
+									
+									  {/if}
 						<h1>{$slider1.text1}</h1>
 						<p>  <a href="{$slider1.morem}"   class="label label-danger">{$CONST.READ_MORE}</a></p>
 					</div>

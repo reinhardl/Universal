@@ -5,7 +5,7 @@
 					{foreach from=$dategroup.entries item="entry"}
 						<div class="row">
 							 <div class="col-sm-12">
-								<div class="caption"><a href="{$entry.link}" rel="bookmark">{$entry.title|@default:$entry.id}&raquo;</a></div>
+								<div class="caption"><a href="{$entry.link}" rel="bookmark"><h4>{$entry.title|@default:$entry.id}&raquo;</h4></a></div>
 								<div class="date">{$entry.timestamp|@formatTime:DATE_FORMAT_ENTRY}</div>
 								 
 								<div class="intro"><p> {$entry.body|strip_tags|truncate:$template_option.latestPost_textcount2:" ..."}  </p> 
@@ -15,7 +15,7 @@
 									{/if}</div>
 							</div>
 						</div>       
-						<br/>
+						<br/> 
 					{/foreach}
 					{/foreach}												
 	        		</div>
