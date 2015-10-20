@@ -146,8 +146,7 @@
 					<div class="section">
 						<div class="container">
 							<div class="row">
-							category=$template_option.latestPost_cat1={$template_option.latestPost_cat1} <br/>
-							category=$template_option.latestPost_cat2={$template_option.latestPost_cat2}<br/>
+ 
 							
 								{serendipity_fetchPrintEntries limit="0,3" entryprops="entry_specific_header_image != ''" category=$template_option.latestPost_cat1 noCache=false fetchDrafts=false full=true use_footer=false noSticky=true  template="entries_latestPosts.tpl"}                      
 								{* Show entries Latest News: If choose no category in theme config *}
@@ -169,9 +168,14 @@
 						<br/>
 				{/if}				
  
+				{* 2 Boxes in one row on startpage*}
+				{if $template_option.startpagerows_seq== $sequence && $template_option.startpagerows_enable=="true"}	
+					{include file='include/include_content3box.tpl'}<hr> 
+				{/if}	
+
+
+		
 			{/for}	
-				
-				
          
   {else}{* normaler Content *}
 	{if $view=='404'}
@@ -265,7 +269,18 @@
     </footer>
 	
 	
- 
+	
+	
+ <br/>	$startpage= {$startpage}
+ <br/>$view={$view}<--
+ <br/> $template_option.google_map_staticpage={$template_option.google_map_staticpage}
+ <br/>$template_option.googlemap_support={$template_option.googlemap_support}
+ <br/>  $currpage={$currpage}
+ <br/>  $currpage2={$currpage2}
+ <br/>  $seite={$seite} 
+ <br/>$template_option.bootstrap={$template_option.bootstrap}
+ <br/>$serendipityBaseURL={$serendipityBaseURL}
+	
 	
 	<script src="{$serendipityBaseURL}/templates/Universal-master/js/mySlider.js"></script>
 	
