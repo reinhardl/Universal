@@ -122,7 +122,7 @@
 {* MAIN CONTENT *}
 
  
- <main id="maincontent" class="container" role="main">
+ <main id="maincontent"   role="main">
  
  {if $startpage =='true' && $view == 'start' && $staticpage_pagetitle == '' } 
 
@@ -137,7 +137,7 @@
 						<div id="lead1" ">
 							{serendipity_fetchPrintEntries category=$template_option.catlead full=true fetchDrafts=false noSticky=true limit="0,1" template="entries_lead.tpl"}
 						</div><!-- /#lead -->
-						<hr>
+						 
 				{/if}
 				
 	 						
@@ -158,7 +158,7 @@
 							</div>
 						</div>
 					</div>	
-					<hr>
+					 
 				{/if}			
 
 
@@ -170,7 +170,7 @@
  
 				{* 2 Boxes in one row on startpage*}
 				{if $template_option.startpagerows_seq== $sequence && $template_option.startpagerows_enable=="true"}	
-					{include file='include/include_content3box.tpl'}<hr> 
+					{include file='include/include_content3box.tpl'} 
 				{/if}	
 
 
@@ -186,15 +186,30 @@
                </ul>
             </nav>
      {else}
-         {$CONTENT}
+	 	 <div class="container">
+			<div class="row">
+				<div class="col-sm-8">	
+					{$CONTENT}
+				</div>
+				<div class="col-sm-1">	
+				 
+				</div>
+				<div class="col-sm-3">	
+					<div id="bothsidbars" class="bss">
+ 					 {if $leftSidebarElements > 0}{serendipity_printSidebar side="left"}{/if}
+					 {if $rightSidebarElements > 0}{serendipity_printSidebar side="right"}{/if}
+					</div> 
+				</div>					
+			</div>
+		</div>	
       {/if}
  {/if}	
  </main>
 	
 	
 	
-	
-    <hr>
+	 
+    <hr> 
 {* FOOTER *}
     <footer class="page-footer" role="contentinfo">
         <div class="container">
