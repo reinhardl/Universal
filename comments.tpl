@@ -1,19 +1,29 @@
+<ul class="timeline">
 {foreach from=$comments item=comment name="comments"}
-    <article id="c{$comment.id}" class="comment {cycle values="odd, even"}{if $comment.depth > 8} commentlevel_9{else} commentlevel_{$comment.depth}{/if}">
-        <h4>{if $comment.url}<a href="{$comment.url}">{/if}{$comment.author|default:$CONST.ANONYMOUS}{if $comment.url}</a>{/if} {$CONST.ON} <time datetime="{$comment.timestamp|serendipity_html5time}">{$comment.timestamp|formatTime:$template_option.date_format}</time>:</h4>
-
-        <div class="content">
-        {if $comment.body == 'COMMENT_DELETED'}
+    <li class="{cycle name="li_cycle_1" values=" ,timeline-inverted"}">
+		<div class="timeline-badge">
+        
+          <a><i class=" {cycle name="named_cycle_2" values="fa fa-circle,fa fa-circle invert"}" id=""></i></a>
+        </div> 
+        <div class="timeline-panel">
+            <div class="timeline-heading">
+                 <h4>{if $comment.url}<a href="{$comment.url}">{/if}{$comment.author|default:$CONST.ANONYMOUS}{if $comment.url}</a>{/if} {$CONST.ON} :</h4>
+            </div>
+            <div class="timeline-body">
+                {if $comment.body == 'COMMENT_DELETED'}
             <p class="serendipity_msg_important">{$CONST.COMMENT_IS_DELETED}</p>
         {else}
             {$comment.body}
         {/if}
+            </div>
+            <div class="timeline-footer">
+                <p class="text-right"> <time datetime="{$comment.timestamp|serendipity_html5time}">{$comment.timestamp|formatTime:$template_option.date_format}</time></p>
+            </div>
         </div>
-    {if $entry.allow_comments AND $comment.body != 'COMMENT_DELETED'}
-        <a id="serendipity_reply_{$comment.id}" class="comment_reply" href="#serendipity_CommentForm" onclick="document.getElementById('serendipity_replyTo').value='{$comment.id}'; {$comment_onchange}">{$CONST.REPLY}</a>
-        <div id="serendipity_replyform_{$comment.id}"></div>
-    {/if}
-    </article>
+    </li>
+
 {foreachelse}
-    <p class="serendipity_msg_notice">{$CONST.NO_COMMENTS}</p>
-{/foreach}
+    <p class="serendipity_msg_notice">{$CONST.NO_COMMENTS}</p>	
+{/foreach}	 
+    <li class="clearfix no-float"></li>
+</ul>

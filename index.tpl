@@ -43,6 +43,7 @@
    {if $startpage =='true' && $view == 'start' && $staticpage_pagetitle == '' } 
    <link href="{$serendipityBaseURL}/templates/Universal-master/css/mySlider.css" rel="stylesheet">   
      {/if}
+ <link href="{$serendipityBaseURL}/templates/Universal-master/css/ResponsiveTimeline.css" rel="stylesheet">   
     {serendipity_hookPlugin hook="frontend_header"}
     <script src="{$head_link_script}"></script>
 </head>
@@ -54,25 +55,21 @@
     {if $template_option.use_corenav}
         <a class="sr-only sr-only-focusable" href="#maincontent"><span lang="en">Skip to main content</span></a>    
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-custom navbar-fixed-top" role="navigation">
-            <div class="container-fluid">
-                {* Brand and toggle get grouped for better mobile display *}
-                <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">{$CONST.TOGGLE_NAV}</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="{$serendipityBaseURL}" title="{$CONST.HOMEPAGE}">{$template_option.home_link_text}</a>
-                    <a class="navbar-brand" href="#basicModal" data-toggle="modal" data-target="#basicModal" title="{$CONST.SEARCH}"><i class="fa fa-search" aria-hidden="true"></i></a>
-                    <a class="navbar-brand" href="{$archiveURL}" title="{$CONST.ARCHIVES}"><i class="fa fa-calendar" aria-hidden="true"></i></a>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">{foreach from=$navlinks item="navlink" name="sitenav"}<li><a href="{$navlink.href}" title="{$navlink.title}">{$navlink.title}</a></li>{/foreach}</ul>               
-                </div>
-            </div>
-        </nav>
+
+		 {include file='include/include_header.tpl'}  
+		<div class="section section-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>hallo</h1>
+					</div>
+				</div>
+			</div>
+		</div>		
+		
+		
+		
+		
     {/if}  <br/><br/><br/><br/><br/> 
     <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
         <div class="modal-dialog">
@@ -119,6 +116,11 @@
             </div>
         </div>
     </header> 
+	
+	
+ 
+ 
+ 
 {* MAIN CONTENT *}
 
  
@@ -190,6 +192,8 @@
 			<div class="row">
 				<div class="col-sm-8">	
 					{$CONTENT}
+					 
+					
 				</div>
 				<div class="col-sm-1">	
 				 
@@ -297,9 +301,15 @@
  <br/>$serendipityBaseURL={$serendipityBaseURL}
 	
 	
-	<script src="{$serendipityBaseURL}/templates/Universal-master/js/mySlider.js"></script>
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="/templates/Basica/js/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="/templates/Basica/js/bootstrap.min.js"></script>
 	
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="{$serendipityBaseURL}/templates/Universal-master/js/mySlider.js"></script>
+			<!-- Scrolling Nav JavaScript -->
+		<script src="{$serendipityBaseURL}/templates/Universal-master/js/jquery.easing.1.3.js"></script>
+		<script src="{$serendipityBaseURL}/templates/Universal-master/js/navigation-easy.js"></script>	
+  {* FOOTER  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> *} 
  
 {/if}
 {$raw_data}
