@@ -127,8 +127,8 @@
 			
 				{* CatLead*}
 				{if $template_option.catlead_seq== $sequence && $template_option.enable_catlead =="true"}			    	
-						<div id="lead1" ">
-							{serendipity_fetchPrintEntries category=$template_option.catlead full=true fetchDrafts=false noSticky=true limit="0,1" template="entries_lead.tpl"}
+						<div id="lead1" "> 
+							{serendipity_fetchPrintEntries limit="0,1" entryprops="entry_specific_header_image != ''" category=$template_option.catlead noCache=false fetchDrafts=false full=true use_footer=false noSticky=true  template="entries_lead.tpl"}  
 						</div><!-- /#lead -->
 						 
 				{/if}

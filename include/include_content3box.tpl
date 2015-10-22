@@ -14,13 +14,17 @@
 			{/if}
 		{/if}
 
-{assign var=textlaenge value=$startpagerow.truncated_qty scope="root"}
+{assign var=textlaenge value=$startpagerow.truncated_qty scope="root"}  
+ 
 {if $startpagerow.thedesign =='design1'}  
  
-   {serendipity_fetchPrintEntries limit="0,3" entryprops=$entry.properties.entry_specific_header_image != ''  category=$startpagerow.kategorie noCache=false fetchDrafts=false full=false use_footer=false template="entries_3boxes.tpl"} 
+   
+   
+  	{serendipity_fetchPrintEntries limit="0,3" entryprops="entry_specific_header_image != ''" category=$startpagerow.kategorie noCache=false fetchDrafts=false full=true use_footer=false noSticky=true  template="entries_3boxes.tpl"} 
 {/if}
 {if $startpagerow.thedesign =='design2'}
- {serendipity_fetchPrintEntries limit="0,3"  entryprops=$entry.properties.entry_specific_header_image != '' category=$startpagerow.kategorie noCache=false fetchDrafts=false full=false use_footer=false template="entries_3boxes.tpl"}
+  	{serendipity_fetchPrintEntries limit="0,3" entryprops="entry_specific_header_image != ''" category=$startpagerow.kategorie noCache=false fetchDrafts=false full=true use_footer=false noSticky=true  template="entries_3boxes.tpl"} 
   
+
 {/if} </div>
 {/foreach}

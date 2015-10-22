@@ -29,7 +29,7 @@
 								 <h5 ><a class="title" href="{$entry.link}" rel="bookmark">{$entry.title|@default:$entry.id}&raquo;</a> </h5>
 							</div>
 						</div>
-						<p><small>{$entry.body|strip_tags|truncate:$textlaenge:" ..."}
+						<p><small>{$entry.body|strip_tags|truncate:$textlaenge:" ..."} 
 
 						</small></p>
 						<div class="row">
