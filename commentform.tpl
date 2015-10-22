@@ -1,51 +1,78 @@
-<div id="serendipityCommentFormC" class="serendipityCommentForm">
-    <div id="serendipity_replyform_0"></div>
-    <a id="serendipity_CommentForm"></a>
-{if $is_moderate_comments}
-    <p class="serendipity_msg_important">{$CONST.COMMENTS_WILL_BE_MODERATED}</p>
-{/if}
-    <form id="serendipity_comment" action="{$commentform_action}#feedback" method="post">
-        <input type="hidden" name="serendipity[entry_id]" value="{$commentform_id}">
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">{$CONST.ADD_COMMENT}</button>
 
-        <div class="form_field">
-            <label for="serendipity_commentform_name">{$CONST.NAME}</label>
-            <input id="serendipity_commentform_name" type="text" name="serendipity[name]" value="{$commentform_name}">
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{$CONST.ADD_COMMENT}</h4>
+      </div>
+      <div class="modal-body">     
+	   <div id="serendipityCommentForm" class="serendipityCommentForm">
+		<div id="serendipity_replyform"></div>
+		<a id="serendipity_CommentForm"></a>
+		<form id="serendipity_comment" class="form-vertical" action="{$commentform_action}#feedback" method="post">
+			<input type="hidden" name="serendipity[entry_id]" value="{$commentform_id}">
+			<div class="form-group">
+				<label for="serendipity_commentform_name" class="control-label">{$CONST.NAME}</label>
+				<input id="serendipity_commentform_name" class="form-control" name="serendipity[name]" type="text" value="{$commentform_name}" placeholder="{$CONST.NAME}">
+			</div>
+			<div class="form-group">
+				<label for="serendipity_commentform_email" class="control-label">{$CONST.EMAIL}</label>
+				<input id="serendipity_commentform_email" class="form-control" name="serendipity[email]" type="email" value="{$commentform_email}" placeholder="mail@example.org">
+			</div>
+			<div class="form-group">
+				<label for="serendipity_commentform_url" class="control-label">{$CONST.HOMEPAGE}</label>
+				<input id="serendipity_commentform_url" class="form-control" name="serendipity[url]" type="url" value="{$commentform_url}" placeholder="http://...">
+			</div>
+			<div class="form-group">
+				<label for="serendipity_commentform_comment" class="control-label">{$CONST.COMMENT}</label>
+				<textarea id="serendipity_commentform_comment" class="form-control" name="serendipity[comment]" rows="10" placeholder="{$CONST.COMMENT}">{$commentform_data}</textarea>
+			</div>
+			<div class="form-group">
+				<label id="reply-to-hint" for="serendipity_replyTo" class="control-label">{$CONST.IN_REPLY_TO}</label>
+				{$commentform_replyTo}
+			</div>
+			<div class="form-group">
+				{serendipity_hookPlugin hook="frontend_comment" data=$commentform_entry}
+			</div>
+			{if $is_commentform_showToolbar || $is_allowSubscriptions}
+			<div class="form-group">
+				{if $is_commentform_showToolbar}           
+					<div class="checkbox">
+						<label class="checkbox-inline" for="checkbox_remember"><input id="checkbox_remember" name="serendipity[remember]" type="checkbox" {$commentform_remember}>{$CONST.REMEMBER_INFO}</label>
+					</div>
+				{/if}
+				{if $is_allowSubscriptions}
+                <div class="checkbox">
+                    <label class="checkbox-inline" for="checkbox_subscribe"><input id="checkbox_subscribe" name="serendipity[subscribe]" type="checkbox" {$commentform_subscribe}>{$CONST.SUBSCRIBE_TO_THIS_ENTRY}</label>
+                </div>
+            {/if}
         </div>
-
-        <div class="form_field">
-            <label for="serendipity_commentform_email">{$CONST.EMAIL}</label>
-            <input id="serendipity_commentform_email" type="email" name="serendipity[email]" value="{$commentform_email}">
-        </div>
-
-        <div class="form_field">
-            <label for="serendipity_commentform_url">{$CONST.HOMEPAGE}</label>
-            <input id="serendipity_commentform_url" type="url" name="serendipity[url]" value="{$commentform_url}">
-        </div>
-
-        <div class="form_select">
-            <label for="serendipity_replyTo">{$CONST.IN_REPLY_TO}</label>
-            {$commentform_replyTo}
-        </div>
-
-        <div class="form_area">
-            <label for="serendipity_commentform_comment">{$CONST.COMMENT}</label>
-            <textarea id="serendipity_commentform_comment" rows="10" name="serendipity[comment]">{$commentform_data}</textarea>
-        </div>
-
-        {serendipity_hookPlugin hook="frontend_comment" data=$commentform_entry}
-    {if $is_commentform_showToolbar}
-        <div class="form_check">
-            <input id="checkbox_remember" type="checkbox" name="serendipity[remember]" {$commentform_remember}> <label for="checkbox_remember">{$CONST.REMEMBER_INFO}</label>
-        </div>
-        {if $is_allowSubscriptions}
-        <div class="form_check">
-            <input id="checkbox_subscribe" type="checkbox" name="serendipity[subscribe]" {$commentform_subscribe}> <label for="checkbox_subscribe">{$CONST.SUBSCRIBE_TO_THIS_ENTRY}</label>
-        </div>
-        {/if}
     {/if}
-        <div class="form_buttons">
-            <input id="serendipity_submit" type="submit" name="serendipity[submit]" value="{$CONST.SUBMIT_COMMENT}">
-            <input id="serendipity_preview" type="submit" name="serendipity[preview]" value="{$CONST.PREVIEW}">
-        </div>
-    </form>
+{if $is_moderate_comments}
+    <p class="alert alert-danger serendipity_msg_important">{$CONST.COMMENTS_WILL_BE_MODERATED}</p>
+{/if}
+    <div class="form-group">
+        <input id="serendipity_submit" name="serendipity[submit]" class="btn btn-success" type="submit" value="{$CONST.SUBMIT_COMMENT}">
+        <input id="serendipity_preview" name="serendipity[preview]" class="btn btn-info" type="submit" value="{$CONST.PREVIEW}">
+    </div>
+</form>
+</div>  
 </div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+ 
