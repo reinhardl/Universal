@@ -61,7 +61,15 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h1>hallo</h1>
+						
+						 {if $view != 'entry'}
+                            <hr class="small">
+                            {if $head_subtitle}<span class="subheading">{$head_subtitle|@default:$blogDescription}</span>{else}{$blogDescription}{/if}
+                        {else} <h1>{$head_title|@default:$blogTitle|truncate:80:" ..."}{$view}</h1>
+                            {if $entry.properties.entry_subtitle}<h2 class="subheading">{$entry.properties.entry_subtitle|escape}</h2>{/if}                        
+                            <p class="meta">{if $entry.is_entry_owner and not $is_preview}<a href="{$entry.link_edit}"  title="{$CONST.EDIT_ENTRY}"><button class="btn btn-sm btn-default"><i class="fa fa-lg fa-edit"></i><span class="sr-only">{$CONST.EDIT_ENTRY}</span></button></a>&nbsp;&nbsp;{/if}
+							 </p>
+                        {/if}
 					</div>
 				</div>
 			</div>
@@ -70,7 +78,7 @@
 		
 		
 		
-    {/if}  <br/><br/><br/><br/><br/> 
+    {/if} <div style="height: 250px;">
     <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -98,24 +106,7 @@
     </div>
     
 
-	<header class="intro-header" role="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="{if $view=='entry'}post-heading{else}site-heading{/if}">
-                        <h1>{$head_title|@default:$blogTitle|truncate:80:" ..."}</h1>
-                        {if $view != 'entry'}
-                            <hr class="small">
-                            {if $head_subtitle}<span class="subheading">{$head_subtitle|@default:$blogDescription}</span>{else}{$blogDescription}{/if}
-                        {else}
-                            {if $entry.properties.entry_subtitle}<h2 class="subheading">{$entry.properties.entry_subtitle|escape}</h2>{/if}                        
-                            <p class="meta">{if $entry.is_entry_owner and not $is_preview}<a href="{$entry.link_edit}"  title="{$CONST.EDIT_ENTRY}"><button class="btn btn-sm btn-default"><i class="fa fa-lg fa-edit"></i><span class="sr-only">{$CONST.EDIT_ENTRY}</span></button></a>&nbsp;&nbsp;{/if}{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.ON} <time datetime="{$entry.timestamp|@serendipity_html5time}">{$entry.timestamp|@formatTime:$template_option.date_format}</time></p>
-                        {/if}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header> 
+ 
 	
 	
  
@@ -170,7 +161,7 @@
 						<br/>
 				{/if}				
  
-				{* 2 Boxes in one row on startpage*}
+				{* 3 Boxes in one row on startpage*}
 				{if $template_option.startpagerows_seq== $sequence && $template_option.startpagerows_enable=="true"}	
 					{include file='include/include_content3box.tpl'} 
 				{/if}	
