@@ -1,15 +1,39 @@
+ 
+
+
+
+<ul class="timeline">
 {foreach from=$trackbacks item=trackback}
-    <article id="c{$trackback.id}" class="trackback">
-        <h4><cite>{$trackback.author|default:$CONST.ANONYMOUS}</cite> {$CONST.ON} <time datetime="{$trackback.timestamp|serendipity_html5time}">{$trackback.timestamp|formatTime:$template_option.date_format}</time>: <a href="{$trackback.url|strip_tags}">{$trackback.title}</a></h4>
-	{if $trackback.body == ''}
-		<p>{$CONST.NO_ENTRIES_TO_PRINT}</p>
-	{else}
-        <details>
-            <summary>{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$trackback.title}</summary>
-            <div class="content">{$trackback.body|strip_tags|escape:'htmlall'}</div>
-        </details>
-    {/if}
-    </article>
+   
+      <li class="{cycle name="li_cycle_1" values=" ,timeline-inverted"}">
+		<div class="timeline-badge">
+        
+          <a><i class=" {cycle name="named_cycle_2" values="fa fa-circle,fa fa-circle invert"}" id=""></i></a>
+        </div>
+        <div class="timeline-panel">
+	
+            <div class="timeline-heading">
+                <h4> <a href="{$trackback.url|strip_tags}">{$trackback.title}</a></h4>
+            </div>
+            <div class="timeline-body">
+				{if $trackback.body == ''}
+					<p>{$CONST.NO_ENTRIES_TO_PRINT}</p>
+				{else}
+					<details>
+						 
+						<div class="content">{$trackback.body|strip_tags|escape:'htmlall'}</div>
+					</details>
+				{/if}
+
+			</div>
+            <div class="timeline-footer">
+               <p class="text-right"> <cite>{$trackback.author|default:$CONST.ANONYMOUS}</cite></p>
+		   </div>
+        </div>
+    </li>
+   
 {foreachelse}
     <p class="serendipity_msg_notice">{$CONST.NO_TRACKBACKS}</p>
 {/foreach}
+    <li class="clearfix no-float"></li>
+</ul>	
