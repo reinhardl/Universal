@@ -42,6 +42,7 @@
 {* HEADER IMAGE *}
    {if $startpage =='true' && $view == 'start' && $staticpage_pagetitle == '' } 
    <link href="{$serendipityBaseURL}/templates/Universal-master/css/mySlider.css" rel="stylesheet">   
+   <link href="{$serendipityBaseURL}/templates/Universal-master/css/RowHoverAnimation.css" rel="stylesheet">
      {/if}
  <link href="{$serendipityBaseURL}/templates/Universal-master/css/ResponsiveTimeline.css" rel="stylesheet">   
     {serendipity_hookPlugin hook="frontend_header"}
@@ -62,14 +63,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						
-						 {if $view != 'entry'}
-                            <hr class="small">
-                            {if $head_subtitle}<span class="subheading">{$head_subtitle|@default:$blogDescription}</span>{else}{$blogDescription}{/if}
-                        {else} <h1>{$head_title|@default:$blogTitle|truncate:80:" ..."}{$view}</h1>
-                            {if $entry.properties.entry_subtitle}<h2 class="subheading">{$entry.properties.entry_subtitle|escape}</h2>{/if}                        
-                            <p class="meta">{if $entry.is_entry_owner and not $is_preview}<a href="{$entry.link_edit}"  title="{$CONST.EDIT_ENTRY}"><button class="btn btn-sm btn-default"><i class="fa fa-lg fa-edit"></i><span class="sr-only">{$CONST.EDIT_ENTRY}</span></button></a>&nbsp;&nbsp;{/if}
-							 </p>
-                        {/if}
+ <h1> </h1>
 					</div>
 				</div>
 			</div>
@@ -120,7 +114,7 @@
  {if $startpage =='true' && $view == 'start' && $staticpage_pagetitle == '' } 
 
  
-             
+            
              {* Startpage*}
 			{for $sequence=0 to 9}
 			
@@ -279,7 +273,9 @@
     </footer>
 	
 	
-	
+	{If $is_logged_in == '1'} 
+									
+								 	
 	
  <br/>	$startpage= {$startpage}
  <br/>$view={$view}<--
@@ -290,7 +286,9 @@
  <br/>  $seite={$seite} 
  <br/>$template_option.bootstrap={$template_option.bootstrap}
  <br/>$serendipityBaseURL={$serendipityBaseURL}
-	
+	<a class=" btn-primary btn-xs" href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=templates&serendipity[adminAction]=editConfiguration" role="button">Theme-Config</a>	 							
+									
+									 {else}  <br/>{/if}	
 	
 	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="/templates/Basica/js/jquery-1.9.1.min.js"><\/script>')</script>

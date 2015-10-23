@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="row">
-    	<div class="col-md-12">
+    	 
 		
  
 	{foreach from=$entries item="dategroup"}
@@ -55,7 +55,8 @@
 									
 									 {else}  <br/>{/if}	 <hr>	
 
-	</div>
+ 
 </div> 
+ 
 {serendipity_hookPlugin hook="entries_footer"}
  

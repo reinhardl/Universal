@@ -1,11 +1,12 @@
 {serendipity_hookPlugin hook="entries_header" addData="$entry_id"}
+
 {foreach from=$entries item="dategroup"}
     {foreach from=$dategroup.entries item="entry"}
     {assign var="entry" value=$entry scope=parent}
     <article class="post{if $dategroup.is_sticky} is_sticky{/if}">
         <header>
-            <h2><a href="{$entry.link}">{$entry.title}</a></h2>
-
+            <h2><a href="{$entry.link}">{$entry.title}</a></h2>   
+ 
             <span class="byline">{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.ON} <time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:$template_option.date_format}</time></span>
         </header>
 
@@ -23,6 +24,41 @@
         {/if}
 
         <footer>
+		
+					{if $entry.is_entry_owner and not $is_preview}
+                        
+						 
+						 <a href="{$entry.link_edit}"  title="{$CONST.EDIT_ENTRY}"><button class="btn-primary btn-xs"><small>  {$CONST.EDIT_ENTRY}</small> </button></a>
+					 
+                        {/if}
+
+		
+		{if isset($entry.freetag.extended) && $entry.freetag.extended == 1}
+    {if $entry.freetag.tags.tags}
+        <div class="serendipity_freeTag">{$entry.freetag.tags.description}
+            {foreach from=$entry.freetag.tags.tags item="tag"}
+               dd {$tag}
+            {/foreach}
+        </div>
+
+        {if $is_single_entry or $is_preview}
+            {$entry.freetag.related.description}
+            <ul class="serendipity_freeTag_related">
+			 
+            {foreach from=$entry.freetag.related.entries item="link"}
+         <li>{$link}</li>
+            {/foreach}
+            </ul>
+        {/if}
+    {/if}
+{else}
+    {$entry.freetag}
+{/if}
+		
+		
+		
+		
+		
         {if $entry.categories}
             <span class="info_label">{$CONST.CATEGORIES}: </span>{foreach from=$entry.categories item="entry_category" name="categories"}<a href="{$entry_category.category_link}">{$entry_category.category_name|escape}</a>{if not $smarty.foreach.categories.last}, {/if}{/foreach}
         {/if}
