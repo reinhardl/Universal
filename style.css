@@ -31,6 +31,23 @@
   border-image-repeat: stretch stretch;
 } 
 
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+	color: #fff;
+	background-color: #337AB7;
+}
+.navbar-nav > li > .dropdown-menu {
+ color: #fff;
+	background-color: #337AB7;
+}
+.dropdown-menu > li > a {
+	color: #fff; 
+}
+.navbar-default .navbar-brand {
+	color: #fff;
+}
+.navbar-default .navbar-nav > li > a {
+	 color: #337AB7; 
+}
 .maxPicHeight {
 	max-height: 110px; }
 	
@@ -43,6 +60,16 @@
 $navbar-height: 50px;
 $big-logo-padding: 15px; // adjust these 2 values
 $small-logo-padding: 2px; // of bottom padding to look nice
+
+
+
+
+
+
+
+
+
+
 
 
 /* *********************************
@@ -70,10 +97,98 @@ color: black;
 }
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
 color: #22F;
-
+ 
 }
 ul.nav {
 }
+ 
+.navbar-default {
+    background-color: #FFF;
+    border-color: #CCC;
+	color: #FFF;
+}
+.navbar {
+	background:#111;
+}
+@media(min-width:767px) {
+    .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+	
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: #aec62c;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+/* navbar */
+.navbar-default {
+   font-size: floor(@component-font-size-base * 1.067); // ~16px
+   border-radius: @border-radius-large;
+   border: none;
+   background-color: @brand-primary !important;
+}
+ 
+ 
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: @clouds;
+}
+.navbar-default .navbar-nav > li > a:hover {
+    color: @clouds;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: @clouds;
+    background-color: @brand-secondary;  // Changes color of main button that is currently active.
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: @clouds;
+    background-color: @brand-secondary;  //  Changes color of main menu button once clicked.
+}
+/* caret */
+.navbar-default .navbar-nav > li > a .caret {
+    border-top-color: @clouds;
+    border-bottom-color: @clouds;
+    color: @clouds;
+}
+.navbar-default .navbar-nav > li > a:hover .caret {
+    border-top-color: #333;
+    border-bottom-color: #333;
+}
+.navbar-default .navbar-nav > .open > a .caret, 
+.navbar-default .navbar-nav > .open > a:hover .caret,  
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #555;
+    border-bottom-color: #555;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* *********************************
            Toolbar Logo
@@ -91,4 +206,16 @@ ul.nav {
   padding-bottom: $small-logo-padding;
 }
 
- 
+ .section-breadcrumbs
+{
+  background-color: #337AB7;
+  background-image: none;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-size: auto auto;
+  margin-bottom: 10px;
+  margin-top: 85px;
+}

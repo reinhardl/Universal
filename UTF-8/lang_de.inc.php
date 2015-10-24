@@ -1,6 +1,6 @@
 <?php
 // General
-@define('STARTPAGE_CAT_WINDOWSINFO', '<b><p style="color:#FFFFFF; background-color: blue"> Reihen der Startseite:  </p></b>');
+@define('STARTPAGE_CAT_WINDOWSINFO', '<b><p style="color:#FFFFFF; background-color: blue"> Reihen der Startseite:  </p></b> Auf der Startseite besteht die Möglichkeit, mehrere Reihen mit jeweils 3 Fenstern erstellen zu lassen. Jeder Reihe muss eine Kategorie zugewiesen werden. Zudem muss einem Eintrag ein Bild zugewiesen sein, damit er in einer Reihe auf der Startseite angezeigt und nicht übersprungen wird. Den Reihen kann man ausserdem diverse Designs in der Themes-Konfiguration zuweisen. Dort ist ebenfalls die Anzahl der Zeichen die angezeit werden sollen einstellbar.<br/> Das Modul benötigt das <strong>s9y-Event-Plugin </strong><i><strong>Erweiterte Eigenschaften von Artikeln</strong>');
 @define('CATLEAD_TEXTCOUNT','LEAD-Kategorie Zeichenanzahl');
 @define('NAVLINK_INFO2', '<b><p style="color:#FFFFFF; background-color: green"> Navigation2 mit Sublinks </p></b>');
 @define('STARTPAGEROWS_ENABLE','Zeige Reihen mit Kategorieboxen? ');
@@ -20,7 +20,8 @@
 @define('SITENAV_SUBNAV_LINK_BLANK_TARGET' ,'Öffne Untermenü-Link im neuen Fenster');  
 @define('NAVLINK_ENABLE' ,'Hauptmenü aktiviert ');  
 @define('THEME_HAUPTMENUE' ,'Hauptmenü und Logo ');
-@define('THEME_STARTSEITE' ,'Startseite: Lead Kategorie und Fensterreihen');
+@define('THEME_LEAD_CAT' ,'Startseite: Lead-Kategorie ');
+@define('THEME_STARTSEITE' ,'Startseite: 3er Fensterreihen');
 @define('NAVLINK_USE_DESC' ,'Das Hauptmenü ist ein erweitertes Menü welches auch Dropdown Untermenüs hat. Als erstes die "Anzahl der Menüpunkte" festlegen und abspeichern. Dann wieder in Themes konfigurieren und die neuen Menüpunkte (haben einen grünen Balken) mit Inhalt füllen. ');  
 @define('STATIC_SHOW_SIDEBARS_TITLE','Seitenleisten anzeigen?  Falls nein wird die statische Seite in voller Breite ausgegeben.');
 @define('STATIC_SHOW_SIDEBARS_TEXT','Seitenleisten anzeigen?');
@@ -38,7 +39,9 @@
 @define('STARTPAGE_ROWS_USE_DESC','Anzahl der Reihen d.h. Anzahl der Kategorien, die auf der Startseite angezeigt werden.');
 @define('STARTPAGE_REIHE','Anzahl der Reihen mit Kategorieboxen auf der Startseite');
 @define('DISPLAY_CAT_NAME','Kategoriename in den Boxen anzeigen');
-@define('STARTPAGE_INSTRUCTIONS','<strong>Magazin Modus</strong> <br/>Auf der Startseite kann man eine Lead-Kategorie und mehrere "Reihen" mit Kategorieboxen erstellen lassen. Jede Reihe bekommt von Ihnen eine spezielle Kategorie zugeordnet. Zur Zeit hat eine Reihe 3 Boxen. Dieses sind die 3 jüngsten Einträge aus der gewählten Kategorie. Das Bild das in den Boxen angezeigt wird ist bei den "Erweiterte Eigenschaften von Artikeln" unter "EntryPicture" anzugeben. Wird dort kein Bild angegeben wird dieser Eintrag nicht auf der Startseite in der Box dargestellt und der nächste genommen.  ');
+@define('STARTPAGE_INSTRUCTIONS','<strong>3er Fenster auf der Startseite</strong>    ');
+@define('LEAD_CAT_INSTRUCTIONS','<strong>Lead Kategorie</strong>    ');
+ 
 @define('STDNAVIGATION_INSTRUCTIONS','<strong>Globale Navigation</strong> <br/>Die klassische "Globale Navigation" von Serendipity wird von diesem  Template in den Template-Footer angezeigt. ');
 @define('REIHENFOLGE','Reihenfolge auf der Startseite');
 @define('REIHENFOLGE_DESC','Das Template unterstützt auf der Startseite diverse Module wie den "Slider", eine "Lead-Kategorie", "Letzte Meldungen" und weitere. Mit dem Parameter von 0-9 können sie die Darstellungsreihenfolge beeinflussen. ');
@@ -74,7 +77,7 @@
 @define('THEME_INSTRUCTIONS','<p>Dieses Theme nutzt breite Header-Bilder für unterschiedliche Seitentypen. Standardbilder werden mit dem Theme geliefert, diese sind 1900px breit. Diese Standardbilder können unten in den Einstellungen ausgetauscht werden. Zusaätzlich zu den Standardbildern können für jeden Eintrag und jede statische Seite eigene Header-Bilder definiert werden.</p> <p>Das Design dieses Theme sieht die Nutzung eines sekundären Untertitels oder einer Verfasserzeile direkt unter dem Eintragstitel vor. Dieser Untertitel und das Eintragsbild können im Abschnitt "Erweiterte Optionen" beim Anlegen oder Bearbeiten einer Seite geändert werden. Optional kann man das Theme so einstellen, dass die ersten 70 Zeichen des Eintrags als Untertitel verwendet werden, wenn kein Untertitel angegeben wurde.</p> <p>Dieses Theme bietet keine Seitenleisten, kann jedoch optional die Seitenleisten-Plugins Kategorien und Tags in der Archiv-Seite ausgeben. Siehe "' . THEME_PAGE_OPTIONS . '" unten.</p> <p>Falls das Avatar-Plugin (serendipity_event_gravatar) verwendet wird, sollte dessen Option "Smarty Tag erzeugen" für eine optimale Darstellung auf "Ja" gesetzt werden.</p> <p>Die Option "Erweiteres Smarty" in serendipity_event_freetag sollte für eine schönere Darstellung im Eintragsfuß ebenfalls auf "Ja" gesetzt sein.</p>');
 @define('THEME_ENTRY_PROPERTIES_HEADING','Eintragseigenschaften des Universal-Themes');
 @define('THEME_CUSTOM_FIELD_HEADING', 'Freie Felder für Einträge');
-@define('THEME_CUSTOM_FIELD_DEFINITION','Diese optionalen Felder sind nur verfügbar, wenn dieses Theme (Universal) verwendet wird. Das Ereignis-Plugin serendipity_event_entryproperties (Erweiterte Eigenschaften für Einträge) muss installiert sein, um diese Felder zu verwenden. Der Eintrags-Untertitel wird unter dem Titel des Eintrags ausgegeben und sollte eine kurze Zusammenfassung des Eintrags enthalten. Das "Bild des Eintrags" wird bei den Startseiten-Modulen "Lead-Kategorie", "Latest-Posts", "Fensterreihen" wie auch bei der Darstellung der Einträge und auf den Archivseiten angezeigt. Bevorzugt hier bitte bei der Bildauswahl die Vorschau wählen.');
+@define('THEME_CUSTOM_FIELD_DEFINITION','Diese optionalen Felder sind nur verfügbar, wenn dieses Theme (Universal) verwendet wird. Das Ereignis-Plugin serendipity_event_entryproperties (Erweiterte Eigenschaften für Einträge) muss installiert sein, um diese Felder zu verwenden. Der Eintrags-Untertitel wird in verschiedenen Modulen zum Eintrag mit ausgegeben und sollte eine kurze Zusammenfassung des Eintrags enthalten. Das "Bild des Eintrags" wird bei den Startseiten-Modulen "Lead-Kategorie", "Latest-Posts", "Fensterreihen" wie auch bei der Darstellung der Einträge und auf den Archivseiten angezeigt. Bevorzugt hier bitte bei der Bildauswahl die Vorschau wählen.');
 @define('THEME_ENTRY_SUBTITLE','Untertitel des Eintrags');
 @define('THEME_ENTRY_HEADER_IMAGE','Bild des Eintrags');
 
@@ -118,7 +121,7 @@
 @define('GITHUB_LINK','Github Link des Mitarbeiters');
 @define('TUMBLR_LINK','Tumblr Link des Mitarbeiters');
 // Lead Kategorie
-@define('LEAD_CAT_WINDOWSINFO', '<b><p style="color:#FFFFFF; background-color: #AC0909"> Angaben zur Lead-Kategorie: </p></b><b>Hinweis:</b> Das Universal-Template unterstüzt ein begleitendes Bild zu einem Eintrag. Damit dieses Feature funktioniert, muss das s9y-Event-Plugin <i>Erweiterte Eigenschaften von Artikeln</i> installiert sein. Zusätzlich muss in der Konfiguration dieses Plugins unter <i>Freie Felder</i> ein Feld namens <span style="color: #1C45C3"><strong>EntryPicture</strong></span> (Groß-/Kleinschreibung beachten!) angelegt sein. Dann kann beim Erstellen eines Eintrags diesem unter <i>Erweiterte Optionen</i> ein Bild aus der Mediendatenbank zugewiesen werden.&nbsp; <br />');  
+@define('LEAD_CAT_WINDOWSINFO', '<p style="color:#FFFFFF; background-color: #AC0909"> Angaben zur Lead-Kategorie: </p></b><b>Hinweis:</b> Auf der Startseite kann man eine Lead-Kategorie erstellen lassen, der eine spezielle Kategorie zugeordnet ist. Es gibt begleitendes Bild zu einem Eintrag welches man im Eingabefeld <label for="entry_specific_header_image">Bild des Eintrags</label> zuordnen kann.&nbsp; Wird dort kein Bild angegeben wird dieser Eintrag nicht auf der Startseite in der Box dargestellt und der nächste genommen. Damit das funktioniert muss das <strong>s9y-Event-Plugin </strong><i><strong>Erweiterte Eigenschaften von Artikeln</strong></i>&nbsp; installiert sein. <br />');  
 @define('ENABLE_CATLEAD','Lead-Kategorie auf der Startseite anzeigen?');
 @define('CAT_LEAD','Lead-Kategorie auswählen');
 @define('LEAD_INSTRUCTIONS','<strong>Magazin Modus</strong> <br/>Auf der Startseite kann eine Lead-Kategorie angegeben werden. Zudem kann man zusätzlich darunter mehrere "Reihen" mit Kategorieboxen erstellen lassen. Jede Reihe bekommt von Ihnen eine spezielle Kategorie zugeordnet. Zur Zeit hat eine Reihe 3 Boxen. Dieses sind die 3 jüngsten Einträge aus der gewählten Kategorie. Das Bild das in den Boxen angezeigt wird ist bei den "Erweiterte Eigenschaften von Artikeln" unter "EntryPicture" anzugeben. Wird dort kein Bild angegeben wird dieser Eintrag nicht auf der Startseite in der Box dargestellt und der nächste genommen. <br/>Als Erstes gibt man die Anzahl der Reihen an. ');

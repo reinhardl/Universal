@@ -1,5 +1,5 @@
  
-
+{if $entry.trackbacks !="0" } 
 
 
 <ul class="timeline">
@@ -31,9 +31,12 @@
 		   </div>
         </div>
     </li>
-   
-{foreachelse}
-    <p class="serendipity_msg_notice">{$CONST.NO_TRACKBACKS}</p>
+ 
 {/foreach}
     <li class="clearfix no-float"></li>
 </ul>	
+{else}
+<div class="alert alert-info" role="alert">
+ <p class="serendipity_msg_notice">{$CONST.NO_TRACKBACKS}</p>	
+ </div>
+{/if}

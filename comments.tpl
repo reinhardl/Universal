@@ -1,4 +1,7 @@
+{if $entry.comments !="0"}
+ 
 <ul class="timeline">
+
 {foreach from=$comments item=comment name="comments"}
     <li class="{cycle name="li_cycle_1" values=" ,timeline-inverted"}">
 		<div class="timeline-badge">
@@ -13,7 +16,7 @@
                 {if $comment.body == 'COMMENT_DELETED'}
             <p class="serendipity_msg_important">{$CONST.COMMENT_IS_DELETED}</p>
         {else}
-            {$comment.body}
+           {$comment.avatar} {$comment.body}
         {/if}
             </div>
             <div class="timeline-footer">
@@ -21,9 +24,14 @@
             </div>
         </div>
     </li>
-
+	
 {foreachelse}
-    <p class="serendipity_msg_notice">{$CONST.NO_COMMENTS}</p>	
+    
 {/foreach}	 
     <li class="clearfix no-float"></li>
 </ul>
+{else}
+<div class="alert alert-info" role="alert">
+ <p class="serendipity_msg_notice">{$CONST.NO_COMMENTS}</p>	
+ </div>
+{/if}

@@ -7,7 +7,7 @@
         <header>
             <h2><a href="{$entry.link}">{$entry.title}</a></h2>   
  
-            <span class="byline">{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.ON} <time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:$template_option.date_format}</time></span>
+            <span class="byline">{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.ON} <time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:$template_option.date_format}</time><br/></span>
         </header>
 
         <div class="content">
@@ -54,8 +54,16 @@
 {else}
     {$entry.freetag}
 {/if}
-		
-		
+	<br/>	
+	
+
+
+
+
+  
+
+
+	
 		
 		
 		

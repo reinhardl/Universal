@@ -133,14 +133,15 @@
 					<div class="section">
 						<div class="container">
 							<div class="row">
- 
-							
-								{serendipity_fetchPrintEntries limit="0,3" entryprops="entry_specific_header_image != ''" category=$template_option.latestPost_cat1 noCache=false fetchDrafts=false full=true use_footer=false noSticky=true  template="entries_latestPosts.tpl"}                      
+								{assign var='total1' value=$template_option.latestPost_amount1}
+								{assign var='total2' value=$template_option.latestPost_amount2}
+								$template_option.latestPost_amount1={$template_option.latestPost_amount1}
+								{serendipity_fetchPrintEntries limit="0,$total1" entryprops="entry_specific_header_image != ''" category=$template_option.latestPost_cat1 noCache=false fetchDrafts=false full=true use_footer=false noSticky=true  template="entries_latestPosts.tpl"}                      
 								{* Show entries Latest News: If choose no category in theme config *}
 								{if $template_option.latestPost_cat2 =="0"}
-									{serendipity_fetchPrintEntries   entryprops="entry_category.category_name != 'K1'" full=true fetchDrafts=false noSticky=true limit="0,3" template="entries_latestNews.tpl"}
+									{serendipity_fetchPrintEntries   entryprops="entry_category.category_name != 'K1'" full=true fetchDrafts=false noSticky=true limit="0,$total2" template="entries_latestNews.tpl"}
 								{else}
-									{serendipity_fetchPrintEntries   category=$template_option.latestPost_cat2  full=true fetchDrafts=false noSticky=true limit="0,3" template="entries_latestNews.tpl"}
+									{serendipity_fetchPrintEntries   category=$template_option.latestPost_cat2  full=true fetchDrafts=false noSticky=true limit="0,$total2" template="entries_latestNews.tpl"}
 								{/if}
 							</div>
 						</div>

@@ -156,6 +156,14 @@ $template_config = array(
         'type'          => 'boolean',
         'default'       => false,
     ), 
+	array(
+      'var'           => 'startpagerows_seq',
+      'name'          => REIHENFOLGE,
+	  'description'   => REIHENFOLGE_DESC,	  
+      'type'          => 'select',
+      'default'       => '4',
+      'select_values' => array('1','2','3','4','5','6','7','8','9'),
+    ),
     array(
         'var'           => 'latestPost_enable',
         'name'          => LATEST_POST_ENABLE,
@@ -221,19 +229,7 @@ $template_config = array(
         'type'          => 'string',
         'default'       => '130',
     ),	
-    array(
-        'var'           => 'latestPost_with_pic1',
-        'name'          => LATEST_POST_WITH_PIC1,
-        'type'          => 'boolean',
-        'default'       => true,
-    ),	
-    array(
-        'var'           => 'latestPost_with_pic2',
-        'name'          => LATEST_POST_WITH_PIC2,
-        'type'          => 'boolean',
-        'default'       => false,
-    ),	
-	array(
+ 	array(
       'var'           => 'latestPost_seq',
       'name'          => REIHENFOLGE,
 	  'description'   => REIHENFOLGE_DESC,
@@ -300,6 +296,11 @@ $template_config = array(
         'var'           => 'startpage_instructions',
         'type'          => 'content',
         'default'       =>  STARTPAGE_INSTRUCTIONS ,
+    ),
+	    array(
+        'var'           => 'lead_cat_instructions',
+        'type'          => 'content',
+        'default'       =>  LEAD_CAT_INSTRUCTIONS ,
     ),
     array(
         'var'           => 'stdnavigation_instructions',
@@ -725,8 +726,9 @@ $slider_collapse = array('rlslider1_enable','rlslider1_seq', 'rlslider1_amount')
 for ($i = 0; $i < $template_loaded_config['rlslider1_amount']; $i++) {
 	array_push($slider_collapse,'slider1' . $i . 'rlslider_intro' , 'slider1' . $i . 'text1' ,'slider1' . $i . 'text2' ,'slider1' . $i. 'text3' ,'slider1' .$i . 'bg_img' ,'slider1' . $i . 'morem');
 }
- 
-$startpagerows_collapse = array('startpage_instructions','lead_cat_windowsinfo', 'enable_catlead','catlead_seq','catlead_textcount','catlead','startpage_cat_windowsinfo','startpagerows_enable','startpage_cat_windows','displaycatname');
+$lead_cat_collapse= array('lead_cat_instructions','lead_cat_windowsinfo', 'enable_catlead','catlead_seq','catlead_textcount','catlead');
+
+$startpagerows_collapse = array('startpage_instructions',  'startpage_cat_windowsinfo','startpagerows_enable','startpagerows_seq','startpage_cat_windows','displaycatname');
 for ($i = 0; $i < $template_loaded_config['startpage_cat_windows']; $i++) {
 	array_push($startpagerows_collapse, 'startpagerow'.$i.'cat_intro',		'startpagerow' . $i . 'win_column',	'startpagerow' . $i . 'title_text',	'startpagerow' . $i . 'truncated_qty',	'startpagerow' . $i . 'titlesonly_qty',	'startpagerow' . $i . 'thedesign','startpagerow' . $i . 'the_title',	'startpagerow' . $i . 'catdescription',	'startpagerow' . $i . 'show_title',	'startpagerow' . $i . 'kategorie'  );
 }
@@ -745,6 +747,7 @@ for ($i = 0; $i < $template_loaded_config['worker1_amount']; $i++) {
 $template_config_groups 	= array(
     THEME_README        	=> array('theme_instructions'),
     THEME_PAGE_OPTIONS  	=> array('home_link_text', 'show_rightsidebar','date_format', 'comment_time_format','subtitle_use_entrybody', 'entrybody_detailed_only', 'show_comment_link', 'categories_on_archive','show_pic_in_archive', 'tags_on_archive', 'copyright'),  
+	THEME_LEAD_CAT			=> $lead_cat_collapse,
 	THEME_STARTSEITE 		=>  $startpagerows_collapse,
 	THEME_LATESTPOSTS       => $latestPosts_collapse,
 	THEME_STARTSEITE_WORKERS=> $workers_collapse,
@@ -1096,7 +1099,7 @@ for ($j = 0; $j < $template_loaded_config['startpage_cat_windows']; $j++) {
         'var'           => 'startpagerow' . $j . 'truncated_qty',
         'name'          => STARTROW_TRUNCATE_QTY,
         'type'          => 'string',
-        'default'       => '1',
+        'default'       => '100',
     );
     $template_config[] = array(
         'var'           => 'startpagerow' . $j . 'titlesonly_qty',
