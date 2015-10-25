@@ -135,7 +135,7 @@
 							<div class="row">
 								{assign var='total1' value=$template_option.latestPost_amount1}
 								{assign var='total2' value=$template_option.latestPost_amount2}
-								$template_option.latestPost_amount1={$template_option.latestPost_amount1}
+								 
 								{serendipity_fetchPrintEntries limit="0,$total1" entryprops="entry_specific_header_image != ''" category=$template_option.latestPost_cat1 noCache=false fetchDrafts=false full=true use_footer=false noSticky=true  template="entries_latestPosts.tpl"}                      
 								{* Show entries Latest News: If choose no category in theme config *}
 								{if $template_option.latestPost_cat2 =="0"}
@@ -176,20 +176,21 @@
      {else}
 	 	 <div class="container">
 			<div class="row">
-				<div class="col-sm-8">	
+				
+				
+				{if $template_option.show_rightsidebar =="1"} <div class="col-sm-8">	{else} <div class="col-sm-12">{/if}
 					{$CONTENT}
 					 
 					
 				</div>
-				<div class="col-sm-1">	
-				 
-				</div>
-				<div class="col-sm-3">	
+				{if $template_option.show_rightsidebar =="1"}
+				<div class="col-sm-1">	</div><div class="col-sm-3">	
 					<div id="bothsidbars" class="bss">
  					 {if $leftSidebarElements > 0}{serendipity_printSidebar side="left"}{/if}
 					 {if $rightSidebarElements > 0}{serendipity_printSidebar side="right"}{/if}
 					</div> 
-				</div>					
+				</div>	
+				{/if}
 			</div>
 		</div>	
       {/if}

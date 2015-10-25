@@ -47,7 +47,7 @@
     {if $entry.freetag.tags.tags}
         <div class="serendipity_freeTag">{$entry.freetag.tags.description}
             {foreach from=$entry.freetag.tags.tags item="tag"}
-               dd {$tag}
+                {$tag}
             {/foreach}
         </div>
 
