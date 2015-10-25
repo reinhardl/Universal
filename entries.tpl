@@ -1,8 +1,11 @@
 {serendipity_hookPlugin hook="entries_header" addData="$entry_id"}
 
 {foreach from=$entries item="dategroup"}
+
+
     {foreach from=$dategroup.entries item="entry"}
     {assign var="entry" value=$entry scope=parent}
+		<div class="clearfix"> </div>
     <article class="post{if $dategroup.is_sticky} is_sticky{/if}">
         <header>
             <h2><a href="{$entry.link}">{$entry.title}</a></h2>   
@@ -10,7 +13,14 @@
             <span class="byline">{$CONST.POSTED_BY} <a href="{$entry.link_author}">{$entry.author}</a> {$CONST.ON} <time datetime="{$entry.timestamp|serendipity_html5time}">{$entry.timestamp|formatTime:$template_option.date_format}</time><br/></span>
         </header>
 
-        <div class="content">
+		<div class="content">		
+		{if  $entry.properties.entry_specific_header_image !=''}
+					<a  href="{$entry.link}" rel="bookmark" title="Permanent link: {$entry.title}"><img class="serendipity_image_left rechtsunten img-responsive" src="{$entry.properties.entry_specific_header_image}" alt="{$entry.properties.entry_specific_header_image}" /></a>
+				{/if}
+				
+				
+				
+       
         {if $entry.categories}{foreach from=$entry.categories item="entry_category"}{if $entry_category.category_icon}<a href="{$entry_category.category_link}"><img class="serendipity_entryIcon" title="{$entry_category.category_name|escape}{$entry_category.category_description|emptyPrefix}" alt="{$entry_category.category_name|escape}" src="{$entry_category.category_icon}"></a>{/if}{/foreach}{/if}
         {$entry.body}
         {if $entry.has_extended and not $is_single_entry and not $entry.is_extended}
@@ -152,7 +162,10 @@
     {if not $plugin_clean_page}
     <p class="serendipity_msg_notice">{$CONST.NO_ENTRIES_TO_PRINT}</p>
     {/if}
+ 
 {/foreach}
+
+
 {if not $is_preview}
     {if $staticpage_pagetitle == ''}
     <nav class="pagination">
