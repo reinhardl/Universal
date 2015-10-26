@@ -36,18 +36,11 @@
 
  
 <hr>
-
-
- 		
-<hr>
-
-
-
-<h3>{$CONST.ARCHIVE_COUNT} &nbsp;"{$kategorien[$category_info.categoryid].name} {if $category_info.categoryid < 1} {$CONST.ALL_CATEGORIES} {/if}"</h3>
+ <h3>{$CONST.ARCHIVE_COUNT} &nbsp;"{$kategorien[$category_info.categoryid].name} {if $category_info.categoryid < 1} {$CONST.ALL_CATEGORIES} {/if}"</h3>
 <hr> <a name="archiv"></a>
 <div class="row">
 	{foreach from=$archives item="archive" name="foo"}
-		<div class="col-md-3">
+		<div class="col-md-4">
 			 
 				<h3>    {$archive.year}   </h3>  
 				
@@ -77,7 +70,7 @@
 			 
 		</div>
 		{if ($smarty.foreach.foo.iteration+1)% 3 ==1}
-			 </div> <hr><div class="row-fluid">
+			 
 		{/if}
 	{/foreach}
 </div>
