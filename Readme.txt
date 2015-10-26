@@ -6,7 +6,7 @@ s9y.org
 Demo on http://test.loepi.org
 
 
-Before you install BASICA
+Before you install  
 
 
 Install freetag plugin - Freie Artikel-Tags (serendipity_event_freetag)
