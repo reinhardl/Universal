@@ -28,9 +28,9 @@
     {if $entry_id}
         <link rel="pingback" href="{$serendipityBaseURL}comment.php?type=pingback&amp;entry_id={$entry_id}">
     {/if}   
-{* CUSTOM FONTS *}
+
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600,800|Lora:400,400italic' rel='stylesheet' type='text/css'>
+{*  CUSTOM FONTS   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600,800|Lora:400,400italic' rel='stylesheet' type='text/css'> *}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -63,7 +63,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						
- <h1> </h1>
+ <h1> &nbsp;</h1>
 					</div>
 				</div>
 			</div>
@@ -72,7 +72,7 @@
 		
 		
 		
-    {/if} <div style="height: 250px;">
+    {/if}  
     <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -109,7 +109,7 @@
 {* MAIN CONTENT *}
 
  
- <main id="maincontent"   role="main">
+ <main id="maincontent"  >
  
  {if $startpage =='true' && $view == 'start' && $staticpage_pagetitle == '' } 
 
@@ -121,7 +121,7 @@
 			
 				{* CatLead*}
 				{if $template_option.catlead_seq== $sequence && $template_option.enable_catlead =="true"}			    	
-						<div id="lead1" "> 
+						<div id="lead1" > 
 							{serendipity_fetchPrintEntries limit="0,1" entryprops="entry_specific_header_image != ''" category=$template_option.catlead noCache=false fetchDrafts=false full=true use_footer=false noSticky=true  template="entries_lead.tpl"}  
 						</div><!-- /#lead -->
 						 
@@ -202,7 +202,7 @@
 	 
     <hr> 
 {* FOOTER *}
-    <footer class="page-footer" role="contentinfo">
+    <footer class="page-footer" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">

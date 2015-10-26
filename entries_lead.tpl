@@ -7,7 +7,7 @@
 				{foreach from=$dategroup.entries item="entry"}	
 					<div class="col-sm-4">
 						{if $entry.properties.entry_specific_header_image != ''}
-							<br/><a href="{$entry.link}" rel="bookmark" title="Permanent link: {$entry.title}"><img id="leadpic" class="img-responsive" src="{$entry.properties.entry_specific_header_image}" /></a>
+							<br/><a href="{$entry.link}" rel="bookmark" title="Permanent link: {$entry.title}"><img alt="Lead Pic" id="leadpic" class="img-responsive" src="{$entry.properties.entry_specific_header_image}" /></a>
 						{/if}
 					</div>
 					<div class="col-sm-8">						 
@@ -22,7 +22,7 @@
 								<h3 class="post-subtitle">{$entry.body|@strip_tags|@strip|@truncate:70:" ..."}</h3>
 							{/if}
 							<div class="date">{$entry.timestamp|@formatTime:DATE_FORMAT_ENTRY}</div>
-						</p>
+						 
 						<p>{$entry.body|strip_tags|truncate:$template_option.catlead_textcount:" ..."} 	</p>						
 						 
 						<p>

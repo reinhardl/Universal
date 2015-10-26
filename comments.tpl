@@ -6,7 +6,7 @@
     <li class="{cycle name="li_cycle_1" values=" ,timeline-inverted"}">
 		<div class="timeline-badge">
         
-          <a><i class=" {cycle name="named_cycle_2" values="fa fa-circle,fa fa-circle invert"}" id=""></i></a>
+          <a><i class=" {cycle name="named_cycle_2" values="fa fa-circle,fa fa-circle invert"}"  >&nbsp; </i></a>
         </div> 
         <div class="timeline-panel">
             <div class="timeline-heading">

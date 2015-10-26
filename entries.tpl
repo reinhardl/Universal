@@ -125,8 +125,11 @@
 {if $is_single_entry and not $is_preview}
     <section id="comments">
         <h3>{$CONST.COMMENTS}</h3>
-
-        <span class="comment_view">{$CONST.DISPLAY_COMMENTS_AS} {if $entry.viewmode eq $CONST.VIEWMODE_LINEAR}{$CONST.COMMENTS_VIEWMODE_LINEAR} | <a href="{$entry.link_viewmode_threaded}#comments" rel="nofollow">{$CONST.COMMENTS_VIEWMODE_THREADED}</a>{else}<a rel="nofollow" href="{$entry.link_viewmode_linear}#comments">{$CONST.COMMENTS_VIEWMODE_LINEAR}</a> | {$CONST.COMMENTS_VIEWMODE_THREADED}{/if}</span>
+		
+{*  
+        <span class="comment_view">{$CONST.DISPLAY_COMMENTS_AS} {if $entry.viewmode eq $CONST.VIEWMODE_LINEAR}{$CONST.COMMENTS_VIEWMODE_LINEAR} | 
+		<a href="{$entry.link_viewmode_threaded}#comments" rel="nofollow">{$CONST.COMMENTS_VIEWMODE_THREADED}</a>{else}<a rel="nofollow" href="{$entry.link_viewmode_linear}#comments">{$CONST.COMMENTS_VIEWMODE_LINEAR}</a>
+		| {$CONST.COMMENTS_VIEWMODE_THREADED}{/if}</span> *}
 
         {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
     {if $entry.is_entry_owner}
@@ -169,7 +172,7 @@
 {if not $is_preview}
     {if $staticpage_pagetitle == ''}
     <nav class="pagination">
-        <h2>{$footer_info}</h2>
+        <h2>{$footer_info}&nbsp;</h2>
     {if $footer_prev_page||$footer_next_page}
         <ul>
             <li class="prev_page">{if $footer_prev_page}<a href="{$footer_prev_page}">{$CONST.PREVIOUS_PAGE}</a>{else}<span>{$CONST.NO_ENTRIES_TO_PRINT}</span>{/if}</li>

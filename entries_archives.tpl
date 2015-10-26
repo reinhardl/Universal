@@ -37,7 +37,7 @@
  
 <hr>
  <h3>{$CONST.ARCHIVE_COUNT} &nbsp;"{$kategorien[$category_info.categoryid].name} {if $category_info.categoryid < 1} {$CONST.ALL_CATEGORIES} {/if}"</h3>
-<hr> <a name="archiv"></a>
+<hr> <h5 id="archiv">&nbsp;</h5>
 <div class="row">
 	{foreach from=$archives item="archive" name="foo"}
 		<div class="col-md-4">
