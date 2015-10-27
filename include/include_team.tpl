@@ -24,14 +24,14 @@
 									</span>
 								</li>
 								<li>{$worker1.text2} {$worker1.link2}</li>
-								{If $is_logged_in == '1'} 								
-									<a class=" btn-primary btn-xs" href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=templates&serendipity[adminAction]=editConfiguration" role="button">Theme-Config</a>																	
-								{/if}
 							</ul>												 						 
 						</div>
 					</div>	
 				</div>		
-			{/foreach}					
+			{/foreach}
+								{If $is_logged_in == '1'} 								
+									<a class=" btn-primary btn-xs" href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=templates&serendipity[adminAction]=editConfiguration" role="button">Theme-Config</a>																	
+								{/if}			
 		</div>
 	</div>
 </div>

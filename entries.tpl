@@ -14,12 +14,15 @@
         </header>
 
 		<div class="content">		
+		 
 		{if  $entry.properties.entry_specific_header_image !=''}
 					<a  href="{$entry.link}" rel="bookmark" title="Permanent link: {$entry.title}"><img class="serendipity_image_left rechtsunten img-responsive" src="{$entry.properties.entry_specific_header_image}" alt="{$entry.properties.entry_specific_header_image}" /></a>
 				{/if}
-				
-				
-				
+		{if $is_single_entry}		
+				{if $entry.properties.entry_photo_gallery_path !='' && $entry.properties.entry_pic_position=='top'}
+										{include file="include/include_gallery.tpl"}
+									{/if}
+			{/if}	
        
         {if $entry.categories}{foreach from=$entry.categories item="entry_category"}{if $entry_category.category_icon}<a href="{$entry_category.category_link}"><img class="serendipity_entryIcon" title="{$entry_category.category_name|escape}{$entry_category.category_description|emptyPrefix}" alt="{$entry_category.category_name|escape}" src="{$entry_category.category_icon}"></a>{/if}{/foreach}{/if}
         {$entry.body}
@@ -27,10 +30,17 @@
         <a class="read_more" href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a>
         {/if}
         </div>
+		
         {if $entry.is_extended}
-        <div id="extended" class="content">
-        {$entry.extended}
-        </div>
+			<div id="extended" class="content"> 											 
+				{if $entry.properties.entry_photo_gallery_path !='' && $entry.properties.entry_pic_position=='middle'}
+					{include file="include/include_gallery.tpl"}
+				{/if}
+				{$entry.extended} 
+				{if $entry.properties.entry_photo_gallery_path !='' && $entry.properties.entry_pic_position=='bottom'}
+					{include file="include/include_gallery.tpl"}
+				{/if}
+			</div>
         {/if}
 
         <footer>

@@ -698,7 +698,7 @@ $template_config = array(
         'var'           => 'text_actionbar',
         'name'          => TEXT_AKTIONBAR,
         'type'          => 'string',
-        'default'       => 'Welcome to <span style="color:#aec62c; text-transform:uppercase;font-size:24px;">Basica!</span> A free fully responsive Bootstrap 3 HTML5 template!',
+        'default'       => 'Welcome to <span style="color:#aec62c; text-transform:uppercase;font-size:24px;">Universal</span> A free fully responsive Bootstrap 3 HTML5 template!',
     ),
 	     array(
         'var'           => 'linktext_actionbar',
