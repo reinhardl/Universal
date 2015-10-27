@@ -22,16 +22,22 @@
 		</div>		
 	
 	</div>	
+	{if $template_option.categories_on_archive =="TRUE"}
+		{if $template_option.tags_on_archive =="TRUE"}<div class="col-md-4">{else}<div class="col-md-8">{/if}
 	
-	<div class="col-md-4">
 		<h3> {$CONST.CATEGORIES}   </h3> 
 		{foreach from=$kategorien item="cat" name="foo"} 
 			<a href="{$cat.link}">  <span class="label label-primary">{$cat.name}</span></a>
 		{/foreach}
 	</div>
-	<div class="col-md-4">
+	{/if}
+	
+	
+	{if $template_option.tags_on_archive =="TRUE"}
+		{if $template_option.categories_on_archive =="TRUE"} <div class="col-md-4"> {else}<div class="col-md-8"> {/if}
 		{serendipity_showPlugin class="serendipity_plugin_freetag"} 
 	</div>	
+	{/if}
 </div>
 
  
