@@ -398,12 +398,7 @@ $template_config = array(
         'type'          => 'string',
         'default'       => $serendipity['baseURL'] .'pages/contactform.html',
     ),		
-    array(
-        'var'           => 'subtitle_use_entrybody',
-        'name'          => SUBTITLE_USE_ENTRYBODY,
-        'type'          => 'boolean',
-        'default'       => false,
-    ),
+ 
     array(
         'var'           => 'entrybody_detailed_only',
         'name'          => ENTRYBODY_DETAILED_ONLY,
@@ -769,7 +764,7 @@ for ($i = 0; $i < $template_loaded_config['worker1_amount']; $i++) {
 
 $template_config_groups 	= array(
     THEME_README        	=> array('theme_instructions'),
-    THEME_PAGE_OPTIONS  	=> array('home_link_text', 'show_rightsidebar','date_format', 'comment_time_format','subtitle_use_entrybody', 'entrybody_detailed_only', 'show_comment_link', 'categories_on_archive','show_pic_in_archive', 'tags_on_archive', 'copyright'),  
+    THEME_PAGE_OPTIONS  	=> array('home_link_text', 'show_rightsidebar','date_format', 'comment_time_format', 'entrybody_detailed_only', 'show_comment_link', 'categories_on_archive','show_pic_in_archive', 'tags_on_archive', 'copyright'),  
 	THEME_LEAD_CAT			=> $lead_cat_collapse,
 	THEME_STARTSEITE 		=>  $startpagerows_collapse,
 	THEME_LATESTPOSTS       => $latestPosts_collapse,
