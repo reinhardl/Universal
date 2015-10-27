@@ -271,6 +271,22 @@ $template_config = array(
         'type'          => 'boolean',
         'default'       => false,
     ),
+	
+    array(
+        'var'           => 'worker1_title',
+        'name'          => WORKER_TITLE,
+        'type'          => 'string',
+        'default'       => 'Workers Title',
+    ),	
+    array(
+        'var'           => 'worker1_desc',
+        'name'          => WORKER_DESC,
+        'type'          => 'string',
+        'default'       => 'Workers Description',
+    ),	
+		
+	
+	
 	array(
       'var'           => 'workers_seq',
       'name'          => REIHENFOLGE,
@@ -744,7 +760,7 @@ for ($i = 0; $i < $template_loaded_config['startpage_cat_windows']; $i++) {
 for ($i = 0; $i < $template_loaded_config['businessgallery1_amount']; $i++) {
 	array_push($business_collapse,'businessgallery1' . $i . 'businessgallery_intro' , 'businessgallery1' . $i . 'text1' ,'businessgallery1' . $i . 'text2' ,'businessgallery1' . $i . 'bg_img' ,'businessgallery1' . $i . 'link1');
 }
-  $workers_collapse = array('worker_description','enable_workers','workers_seq','worker1_amount');
+  $workers_collapse = array('worker_description','enable_workers','workers_seq','worker1_title','worker1_desc','worker1_amount');
 for ($i = 0; $i < $template_loaded_config['worker1_amount']; $i++) {
 	array_push($workers_collapse,'worker1' . $i . 'worker1_intro' , 'worker1' . $i . 'text1' ,'worker1' . $i . 'text2' ,'worker1' . $i . 'bg_img' ,'worker1' . $i . 'link1' ,'worker1' . $i . 'link2' ,'worker1' . $i . 'facebook','worker1' . $i . 'github','worker1' . $i . 'tumblr' );
 }

@@ -1,5 +1,14 @@
 <div class="section">
 	    	<div class="container">
+			
+			<div class="row">
+						<div class="col-md-12"> 
+							<h2>{$template_option.worker1_title}</h2> 
+							 <h3>{$template_option.worker1_desc}</h3> 
+						</div>      
+					</div>
+			
+			
 				<div class="row">
 
 				{foreach from=$workers1 item="worker1" name="worker" key=worker}           
