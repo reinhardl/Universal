@@ -399,12 +399,7 @@ $template_config = array(
         'default'       => $serendipity['baseURL'] .'pages/contactform.html',
     ),		
  
-    array(
-        'var'           => 'entrybody_detailed_only',
-        'name'          => ENTRYBODY_DETAILED_ONLY,
-        'type'          => 'boolean',
-        'default'       => true,
-    ), 
+ 
     array(
         'var'           => 'show_comment_link',
         'name'          => SHOW_COMMENT_LINK,
@@ -764,7 +759,7 @@ for ($i = 0; $i < $template_loaded_config['worker1_amount']; $i++) {
 
 $template_config_groups 	= array(
     THEME_README        	=> array('theme_instructions'),
-    THEME_PAGE_OPTIONS  	=> array('home_link_text', 'show_rightsidebar','date_format', 'comment_time_format', 'entrybody_detailed_only', 'show_comment_link', 'categories_on_archive','show_pic_in_archive', 'tags_on_archive', 'copyright'),  
+    THEME_PAGE_OPTIONS  	=> array('home_link_text', 'show_rightsidebar','date_format', 'comment_time_format','show_comment_link', 'categories_on_archive','show_pic_in_archive', 'tags_on_archive', 'copyright'),  
 	THEME_LEAD_CAT			=> $lead_cat_collapse,
 	THEME_STARTSEITE 		=>  $startpagerows_collapse,
 	THEME_LATESTPOSTS       => $latestPosts_collapse,

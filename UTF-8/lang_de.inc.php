@@ -144,7 +144,6 @@
 @define('WORDS','Textfassung');
 @define('TIMESTAMP','Zeitstempel');
 @define('SUBTITLE_USE_ENTRYBODY','Die ersten 70 Zeichen des Einrags als Untertitel ausgeben, wenn das Feld Untertitel leer gelassen wurde?');
-@define('ENTRYBODY_DETAILED_ONLY','Eintags-Inhalt nur in der Einzelansicht eines Eintrags anzeigen');
 @define('SHOW_COMMENT_LINK','Zeige Link zu den Kommentaren des Eintrags');
 @define('CATEGORIES_ON_ARCHIVE', 'Kategorien auf der Archivseite anzeigen');
 @define('CATEGORIES_ON_ARCHIVE_DESC', 'Das Seitenleisten-Plugin Kategorien (serendipity_plugin_categories) muss installiert und die Option "Smarty-Templating aktivieren?" aktiviert sein, damit Kategorien auf der Archiv-Seite angezeigt werden.');
@@ -154,7 +153,7 @@
 @define('SHOW_PIC_IN_ARCHIVE_DESC','Zeigt das Bild in Blog-Archivseiten mit an, welches unter "Eintrag bearbeiten" dort angegeben wird.');
 //Photogallery in Entries
 @define('THEME_ENTRY_PHOTO_GALLERY','Verzeichnis aus der die Foto-Galerie dieses Eintrags erstellt wird:');
-@define('THEME_ENTRY_PICPOSITION','Position der Fotogalerie. (mögliche Werte:top middle buttom)');
+@define('THEME_ENTRY_PICPOSITION','Position der Fotogalerie. (mögliche Werte:top middle bottom)');
 
 //Google Maps
 @define('GOOGLE_MAP_STATICPAGE_DESC','Die statische Seite bei der die Google Map eingeblendet werden soll. Es geht aber auch die URL für ein Kontaktformular aus dem Kontakt-Plugin.');
