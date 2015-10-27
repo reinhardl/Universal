@@ -1,0 +1,62 @@
+.mitarbeiter-member {
+  position: relative;
+  background: #FFF;
+  margin-bottom: 20px;
+  border: 8px solid #FFF;
+  -webkit-box-shadow: inset 0 1px #fff,0 0 8px #c8cfe6;
+  -moz-box-shadow: inset 0 1px #fff,0 0 8px #c8cfe6;
+  box-shadow: inset 0 1px #fff,0 0 8px #c8cfe6;
+  color: inset 0 1px #fff,0 0 8px #c8cfe6;
+}
+.mitarbeiter-member img {
+  max-width: 100%;
+}
+.mitarbeiter-member ul {
+  list-style-type: none;
+  margin-left: 0;
+  margin-top: 20px;
+}
+.mitarbeiter-member ul li {
+  line-height: 28px;
+}
+.mitarbeiter-member:hover .mitarbeiter-member-image {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+.mitarbeiter-member .mitarbeiter-member-image {
+  text-align: center;
+  position: relative;
+  -webkit-transition: opacity .25s linear;
+  -moz-transition: opacity .25s linear;
+  -o-transition: opacity .25s linear;
+  -ms-transition: opacity .25s linear;
+  transition: opacity .25s linear;
+  -webkit-opacity: 0.85;
+  -moz-opacity: 0.85;
+  opacity: 0.85;
+}
+.mitarbeiter-member .mitarbeiter-member-name {
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+.mitarbeiter-member .mitarbeiter-member-social {
+  position: absolute;
+  right: 10px;
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+  -webkit-transition: opacity .25s linear;
+  -moz-transition: opacity .25s linear;
+  -o-transition: opacity .25s linear;
+  -ms-transition: opacity .25s linear;
+  transition: opacity .25s linear;
+}
+.mitarbeiter-member .mitarbeiter-member-social .mitarbeiter-member-social i {
+  margin-top: 3px;
+}
+.mitarbeiter-member .mitarbeiter-member-social:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}

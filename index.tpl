@@ -41,6 +41,7 @@
    
 {* HEADER IMAGE *}
    {if $startpage =='true' && $view == 'start' && $staticpage_pagetitle == '' } 
+   <link href="{$serendipityBaseURL}/templates/Universal-master/css/Mitarbeiter.css" rel="stylesheet">  
    <link href="{$serendipityBaseURL}/templates/Universal-master/css/mySlider.css" rel="stylesheet">   
    <link href="{$serendipityBaseURL}/templates/Universal-master/css/RowHoverAnimation.css" rel="stylesheet">
      {/if}
@@ -160,11 +161,14 @@
 				{if $template_option.startpagerows_seq== $sequence && $template_option.startpagerows_enable=="true"}	
 					{include file='include/include_content3box.tpl'} 
 				{/if}	
-
-
-		
+				
+				{* our team on startpage*}
+				{if $template_option.startpagerows_seq== $sequence && $template_option.enable_workers=="true"}	
+					{include file='include/include_team.tpl'}	
+				{/if}
 			{/for}	
          
+				
   {else}{* normaler Content *}
 	{if $view=='404'}
           <p class="alert alert-danger alert-error"><span class="fa-stack" aria-hidden="true"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-exclamation fa-stack-1x"></i></span> {$CONST.ERROR_404}</p>
