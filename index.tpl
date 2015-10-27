@@ -202,95 +202,14 @@
 	 
     <hr> 
 {* FOOTER *}
-    <footer class="page-footer" >
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        {if $template_option.twitter_url}
-                            <li>
-                                <a href="{$template_option.twitter_url}">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                        {/if}
-                        {if $template_option.facebook_url}                        
-                            <li>
-                                <a href="{$template_option.facebook_url}">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                        {/if}
-                        {if $template_option.github_url}                         
-                            <li>
-                                <a href="{$template_option.github_url}">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                        {/if}
-                        {if $template_option.instagram_url}                         
-                            <li>
-                                <a href="{$template_option.instagram_url}">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-camera fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                        {/if}   
-                        {if $template_option.pinterest_url}                         
-                            <li>
-                                <a href="{$template_option.pinterest_url}">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                        {/if} 
-                        {if $template_option.rss_url}                         
-                            <li>
-                                <a href="{$template_option.rss_url}">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                        {/if}                        
-                    </ul>
-                    {if $template_option.copyright}<p class="copyright text-muted">{$template_option.copyright}</p>{/if}
-                </div>
-            </div>
-        </div>
-    </footer>
+    
+	 
+   {include file='include/include_footer.tpl'} 
+
+  
+ 
 	
-	
-	{If $is_logged_in == '1'} 
-									
-								 	
-	
- <br/>	$startpage= {$startpage}
- <br/>$view={$view}<--
- <br/> $template_option.google_map_staticpage={$template_option.google_map_staticpage}
- <br/>$template_option.googlemap_support={$template_option.googlemap_support}
- <br/>  $currpage={$currpage}
- <br/>  $currpage2={$currpage2}
- <br/>  $seite={$seite} 
- <br/>$template_option.bootstrap={$template_option.bootstrap}
- <br/>$serendipityBaseURL={$serendipityBaseURL}
-	<a class=" btn-primary btn-xs" href="{$serendipityBaseURL}serendipity_admin.php?serendipity[adminModule]=templates&serendipity[adminAction]=editConfiguration" role="button">Theme-Config</a>	 							
-									
-									 {else}  <br/>{/if}	
+	 
 	
 	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="/templates/Basica/js/jquery-1.9.1.min.js"><\/script>')</script>

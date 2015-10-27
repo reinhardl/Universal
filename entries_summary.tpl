@@ -2,10 +2,10 @@
 <article class="archives">
 	<h2>{$CONST.TOPICS_OF} {$dateRange.0|formatTime:"%B %Y"}</h2>
     <div class="row">
-	 
+	  <h5 id="archiv">&nbsp;</h5>
 	{foreach from=$entries item="sentries"}
         {foreach from=$sentries.entries item="entry"}
-      <h5 id="archiv">&nbsp;</h5>
+     
        <div class="col-sm-6 col-md-4">
 				<div class="thumbnail" >
 					<h4 class="text-center"><span class="label label-info">  {$entry.properties.entry_subtitle|escape}</span></h4>
