@@ -676,38 +676,15 @@ $template_config = array(
        'type'          => 'custom',
        'custom'        => LEAD_CAT_WINDOWSINFO,
     ),	
-	
-     array(
-        'var'           => 'enable_actionbar',
-        'name'          => ENABLE_AKTIONBAR,
-        'type'          => 'boolean',
-        'default'       => 'true'
+	 
+ 
+	 array(
+        'var'           => 'actionbar_amount',
+        'name'          => ACTIONBAR_AMOUNT,
+        'type'          => 'string',
+        'default'       => '2',
     ),	
-	
-	     array(
-        'var'           => 'text_actionbar',
-        'name'          => TEXT_AKTIONBAR,
-        'type'          => 'string',
-        'default'       => 'Welcome to <span style="color:#aec62c; text-transform:uppercase;font-size:24px;">Universal</span> A free fully responsive Bootstrap 3 HTML5 template!',
-    ),
-	     array(
-        'var'           => 'linktext_actionbar',
-        'name'          => LINKTEXT_AKTIONBAR,
-        'type'          => 'string',
-        'default'       => 'info',
-    ),
-	     array(
-        'var'           => 'linkurl_actionbar',
-        'name'          => LINKURL_AKTIONBAR,
-        'type'          => 'string',
-        'default'       => 'http://s9y.org',
-    ),
-	    array(
-        'var'           => 'actionbar_description',
-        'name'          => ACTIONBAR_DESCRIPTION,
-        'type'          => 'content',
-        'default'       => ACTIONBAR_DESCRIPTION,
-    ),
+ 
 	
 	
     array(
@@ -755,8 +732,11 @@ for ($i = 0; $i < $template_loaded_config['worker1_amount']; $i++) {
 	array_push($workers_collapse,'worker1' . $i . 'worker1_intro' , 'worker1' . $i . 'text1' ,'worker1' . $i . 'text2' ,'worker1' . $i . 'bg_img' ,'worker1' . $i . 'link1' ,'worker1' . $i . 'link2' ,'worker1' . $i . 'facebook','worker1' . $i . 'github','worker1' . $i . 'tumblr' );
 }
   
-   $actionbar_collapse = array('actionbar_description','enable_actionbar', 'text_actionbar',  'linktext_actionbar', 'linkurl_actionbar' ); 
-
+   $actionbar_collapse = array('actionbar_description' ,'actionbar_amount'  ); 
+   for ($i = 0; $i < $template_loaded_config['actionbar_amount']; $i++) {
+	array_push($actionbar_collapse,'actionbar' . $i . 'bar_intro' , 'actionbar' . $i . 'enable_actionbar' ,'actionbar' . $i . 'bars_seq' ,'actionbar' . $i . 'atext' ,'actionbar' . $i . 'linktext' ,'actionbar' . $i . 'bg_img' ,'actionbar' . $i . 'linkurl'  );
+}
+ 
 $template_config_groups 	= array(
     THEME_README        	=> array('theme_instructions'),
     THEME_PAGE_OPTIONS  	=> array('home_link_text', 'show_rightsidebar','date_format', 'comment_time_format','show_comment_link', 'categories_on_archive','show_pic_in_archive', 'tags_on_archive', 'copyright'),  
@@ -833,6 +813,81 @@ for ($i = 0; $i < $template_loaded_config['rlslider1_amount']; $i++) {
     );
 }
 $serendipity['smarty']->assign_by_ref('sliders1', $sliders1);
+
+
+
+//actionbars
+ 
+$actionbars = array();
+for ($i = 0; $i < $template_loaded_config['actionbar_amount']; $i++) {
+   $template_config[] = array(
+        'var'           => 'actionbar' . $i . 'bar_intro',
+        'type'          => 'content',
+        'default'       => '<br /><span class="serendipityAdminMsgNote">'. BAR_OPTIONS_TITLE . ' #' . $i .'</span>',
+        );
+    $template_config[] = array(
+        'var'           => 'actionbar' . $i . 'enable_actionbar',
+        'name'          => ENABLE_AKTIONBAR,
+        'type'          => 'boolean',
+        'default'       => 'true',
+    );	
+		$template_config[] = array(
+        'var'           => 'actionbar' . $i . 'atext',
+        'name'          => ACTIONBAR_ATEXT,
+        'type'          => 'string',
+        'default'       => ACTIONBAR_DEFAULT,
+        );
+    $template_config[] = array(
+        'var'           => 'actionbar' . $i . 'linktext',
+        'name'          => ACTIONBAR_LINKTEXT,
+        'type'          => 'string',
+        'default'       => 'Buttom Link Text' . $i,
+        );		
+    $template_config[] = array(
+        'var'           => 'actionbar' . $i . 'linkurl',
+        'name'          => ACTIONBAR_LINKURL,
+        'type'          => 'string',
+        'default'       => '#' ,
+        );	
+	$template_config[] = array(
+      'var'           => 'actionbar' . $i . 'bars_seq',
+      'name'          => REIHENFOLGE,
+	  'description'   => REIHENFOLGE_DESC,	  
+      'type'          => 'select',
+      'default'       => '1',
+      'select_values' => array('1','2','3','4','5','6','7','8','9'),
+    );
+ 
+    $template_config[] = array(
+        'var'           => 'actionbar' . $i . 'bg_img',
+        'name'          => BG_IMG,
+        'type'          => 'media',
+        'default'       => '',
+	 
+		
+    );
+   
+ 
+    $actionbars[] = array(
+	
+		'bar_intro'         => $template_loaded_config['actionbar' . $i . 'bar_intro'],
+		'enable_actionbar'  => $template_loaded_config['actionbar' . $i . 'enable_actionbar'],		
+		'bars_seq'         => $template_loaded_config['actionbar' . $i . 'bars_seq'],
+        'atext'         => $template_loaded_config['actionbar' . $i . 'atext'],
+        'linktext'         => $template_loaded_config['actionbar' . $i . 'linktext'],		
+        'bg_img'        => $template_loaded_config['actionbar' . $i . 'bg_img'],
+        'linkurl'         => $template_loaded_config['actionbar' . $i . 'linkurl']	
+         
+    );   
+}
+$serendipity['smarty']->assign_by_ref('actionbars', $actionbars);  
+
+
+
+
+
+
+
 
 //workers
  

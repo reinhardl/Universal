@@ -97,6 +97,12 @@
 @define('LATEST_POST_TEXTCOUNT1','Zeichen in linker Spalte');
 @define('LATEST_POST_TEXTCOUNT2','Zeichen rechter Spalte');
 //Actionbar
+@define('BAR_OPTIONS_TITLE','<b><p style="color:#FFFFFF; background-color: #337AB7"> Actionbar /advertising </p>');
+@define('ACTIONBAR_AMOUNT','Anzahl der Actionbars auf der Startseite');
+@define('ACTIONBAR_ATEXT','Der Text (kann html enthalten)');
+@define('ACTIONBAR_DEFAULT','Willkommn beim Template <span style="color:#286090; text-transform:uppercase;font-size:24px;">Universal</span> Ein responsive Bootstrap 3 HTML5 Serendipity Theme!');
+@define('ACTIONBAR_LINKTEXT','Text für Schaltfläche (wird nur bei Inhalt gezeigt)');
+@define('ACTIONBAR_LINKURL','URL der Schaltfläche (wird nur bei Inhalt gezeigt)');
 @define('THEME_ACTIONBAR','Startseite: Actionbar');
 @define('ACTIONBAR_DESCRIPTION','Die Actionbar ist ein einfacher Banner mit Text und einem Link-Buttom mit dem man auf eine besondere Seite hinweisen kann.');
 @define('ENABLE_AKTIONBAR','Actionbar anzeigen?');
@@ -116,6 +122,7 @@
 @define('ENABLE_WORKERS','Mitarbeiteranzeige auf Startseite');
 @define('THEME_STARTSEITE_WORKERS','Startseite: Mitarbeiteranzeige');
 @define('WORKER1_AMOUNT','Anzahl anzuzeigende Mitarbeiter');
+
 @define('RWORKER1_LINK_OPTIONS_TITLE','<b><p style="color:#FFFFFF; background-color: #AC0909"> Mitarbeiter </p>');
 @define('FACEBOOK_LINK1','Facebooklink des Mitarbeiters');
 @define('GITHUB_LINK','Github Link des Mitarbeiters');

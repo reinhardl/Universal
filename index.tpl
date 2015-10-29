@@ -119,6 +119,13 @@
              {* Startpage*}
 			{for $sequence=0 to 9}
 			
+ 
+			
+				{* Advertising /Actionbar*}
+				{if  $is_logged_in == '1' && $template_option.enable_actionbar=="true"}	
+					{include file='include/include_actionbar1.tpl'}	
+					
+				{/if}
 			
 				{* CatLead*}
 				{if $template_option.catlead_seq== $sequence && $template_option.enable_catlead =="true"}			    	
