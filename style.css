@@ -1,3 +1,28 @@
+.calltoaction-wrapper {
+  text-align: center;
+}
+.section-map{
+	padding:0;
+	height:400px;
+}
+
+#contact-us-map {
+  height: 400px;
+  margin:0;
+}
+.contact-us-details {
+  margin: 20px 0;
+  font-size: 0.9em;
+}
+.calltoaction-wrapper h3 {
+  display: inline-block;
+  line-height: 36px;
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+.calltoaction-wrapper a {
+  vertical-align: top;
+}
  
 
 .bss h3 {

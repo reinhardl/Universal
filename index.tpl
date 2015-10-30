@@ -185,6 +185,9 @@
                </ul>
             </nav>
      {else}
+	   {if $currpage== $template_option.google_map_staticpage && $template_option.googlemap_support=='true'}  
+			 {include file='include/include_googlemaps.tpl'}<hr>
+		   {/if}  
 	 	 <div class="container">
 			<div class="row">
 				
