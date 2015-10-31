@@ -191,12 +191,30 @@
 	 	 <div class="container">
 			<div class="row">
 				
-				
-				{if $template_option.show_rightsidebar =="1"} <div class="col-sm-8">	{else} <div class="col-sm-12">{/if}
+{*	{if $staticpage_custom.show_sidebars !="true" && $staticpage_pagetitle !=""}	*}
+	
+			{if $staticpage_pagetitle !=""}
+				{if $staticpage_custom.show_sidebars !="true"}<div class="col-sm-12">{else} <div class="col-sm-8">{/if}
 					{$CONTENT}
-					 
-					
 				</div>
+			
+			{else}
+	
+	
+				{if $template_option.show_rightsidebar =="1"} 
+
+
+				 <div class="col-sm-8">	
+				 {else} 
+				<div class="col-sm-12">{/if}
+
+
+				{$CONTENT}
+				</div>
+			{/if}	
+				
+				
+				
 				{if $template_option.show_rightsidebar =="1"}
 				<div class="col-sm-1">	</div><div class="col-sm-3">	
 					<div id="bothsidbars" class="bss">
@@ -219,10 +237,19 @@
     
 	 
    {include file='include/include_footer.tpl'} 
-
-  
- 
-	
+{If $is_logged_in == '1'} 	
+  <br/>$view={$view}<--
+ <br/> $template_option.google_map_staticpage={$template_option.google_map_staticpage}
+ <br/>$template_option.googlemap_support={$template_option.googlemap_support}
+ <br/>  $currpage={$currpage}
+ <br/>  $currpage2={$currpage2}
+ <br/>  $seite={$seite} 
+ <br/>$template_option.bootstrap={$template_option.bootstrap}
+ <br/>$serendipityBaseURL={$serendipityBaseURL} 
+ <br/> $staticpage_pagetitle={$staticpage_pagetitle}
+  <br/> $staticpage_timestamp={$staticpage_timestamp}
+ <br/> $is_single_entry= {$is_single_entry}
+	{/if}
 	 
 	
 	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
