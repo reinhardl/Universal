@@ -137,6 +137,17 @@
                     <input id="author_no" type="radio" name="serendipity[plugin][custom][show_author]" {if $form_values.custom.show_author != 'true'}checked="checked"{/if} value="false" />
                     <label for="author_no">{$CONST.NO}</label>
                 </div>
+{* CUSTOM TO THIS TEMPLATE - OPTION TO SHOW/HIDE SIDEBARS *}
+            <div class="sp_sect">
+                <label class="sp_label" title="{$CONST.STATIC_SHOW_SIDEBARS_TITLE}">{$CONST.STATIC_SHOW_SIDEBARS_TEXT}</label><br />
+                <input id="sidebars_yes" type="radio" name="serendipity[plugin][custom][show_sidebars]" {if $form_values.custom.show_sidebars != 'false'}checked="checked"{/if}value="true" />
+                <label for="sidebars_yes">{$CONST.YES}</label>
+                <input id="sidebars_no" type="radio" name="serendipity[plugin][custom][show_sidebars]" {if $form_values.custom.show_sidebars == 'false'}checked="checked"{/if}value="false" />
+                <label for="sidebars_no">{$CONST.NO}</label>
+            </div>
+				
+				
+				
 {* CUSTOM TO THIS THEME - OPTION TO SHOW/HIDE DATE *}
                 <div class="entryproperties_access_groups adv_opts_box form_select">
                     <label class="sp_label" title="{$CONST.STATIC_SHOW_DATE_TITLE}">{$CONST.STATIC_SHOW_DATE_TEXT}</label><br />
