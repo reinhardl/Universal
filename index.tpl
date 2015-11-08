@@ -237,26 +237,15 @@
     
 	 
    {include file='include/include_footer.tpl'} 
-{If $is_logged_in == '1'} 	
-  <br/>$view={$view}<--
- <br/> $template_option.google_map_staticpage={$template_option.google_map_staticpage}
- <br/>$template_option.googlemap_support={$template_option.googlemap_support}
- <br/>  $currpage={$currpage}
- <br/>  $currpage2={$currpage2}
- <br/>  $seite={$seite} 
- <br/>$template_option.bootstrap={$template_option.bootstrap}
- <br/>$serendipityBaseURL={$serendipityBaseURL} 
- <br/> $staticpage_pagetitle={$staticpage_pagetitle}
-  <br/> $staticpage_timestamp={$staticpage_timestamp}
- <br/> $is_single_entry= {$is_single_entry}
-	{/if}
+ 
 	 
 	
 	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="/templates/Basica/js/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="/templates/Basica/js/bootstrap.min.js"></script>
+        <script>window.jQuery || document.write('<script src="/templates/Universal-master/js/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="/templates/Universal-master/js/bootstrap.min.js"></script>
 	
 	<script src="{$serendipityBaseURL}/templates/Universal-master/js/mySlider.js"></script>
+		<script src="{$serendipityBaseURL}/templates/Universal-master/js/bootstrap-cookie-consent.js"></script>
 			<!-- Scrolling Nav JavaScript -->
 		<script src="{$serendipityBaseURL}/templates/Universal-master/js/jquery.easing.1.3.js"></script>
 		<script src="{$serendipityBaseURL}/templates/Universal-master/js/navigation-easy.js"></script>	
