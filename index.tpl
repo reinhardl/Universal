@@ -20,7 +20,8 @@
        <link rel="canonical" href="{$serendipityBaseURL}">
     {/if}    
 {* BOOTSTRAP CORE CSS  *}
-   {if $template_option.bootstrap =="bootstrap"}    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">  {else} <link href="/templates/Universal-master/css/{$template_option.bootstrap}.css" rel="stylesheet">{/if}   
+   {if $template_option.bootstrap =="bootstrap"}    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">  {else} <link href="/templates/Universal-master/css/{$template_option.bootstrap}.css" rel="stylesheet">
+   <link href="/templates/Universal-master/css/glyphicon.css" rel="stylesheet">{/if}   
 {* S9Y CSS *}
     <link rel="stylesheet" href="{$head_link_stylesheet}"> 
     <link rel="alternate" type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2">

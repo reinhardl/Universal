@@ -160,6 +160,7 @@ $template_config = array(
 								'bootstrap.min.ligtgreen' => 'Green World',
  								'bootstrap.min.violett' => 'Violett Diskret',
 								'bootstrap.min.green' => 'Blue',
+								'bootstrap.min.white' => 'White',								
 								'bootstrap.min.olive' => 'Olive',
 								'bootstrap.min.yellow' => 'Citro',	
 								'bootstrap.min.red' => 'Red is Black',									
