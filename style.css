@@ -167,7 +167,10 @@ $small-logo-padding: 2px; // of bottom padding to look nice
 
  .section-breadcrumbs
 {
-  background-color: #337AB7;
+padding-top: 2px;
+  padding-bottom: 2px;
+  margin-bottom: 1px;
+  
   background-image: none;
   background-repeat: repeat;
   background-attachment: scroll;

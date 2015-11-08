@@ -19,9 +19,8 @@
     {if ($view == "start")}
        <link rel="canonical" href="{$serendipityBaseURL}">
     {/if}    
-{* BOOTSTRAP CORE CSS 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">    *}
-	 <link href="/templates/Universal-master/css/bootstrap.min.green.css" rel="stylesheet">   
+{* BOOTSTRAP CORE CSS  *}
+   {if $template_option.bootstrap =="bootstrap"}    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">  {else} <link href="/templates/Universal-master/css/{$template_option.bootstrap}.css" rel="stylesheet">{/if}   
 {* S9Y CSS *}
     <link rel="stylesheet" href="{$head_link_stylesheet}"> 
     <link rel="alternate" type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2">
@@ -60,7 +59,7 @@
         <!-- Navigation -->
 
 		 {include file='include/include_header.tpl'}  
-		<div class="section section-breadcrumbs">
+		<div class="section jumbotron section-breadcrumbs">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -255,6 +254,8 @@
 {/if}
 {$raw_data}
 {serendipity_hookPlugin hook="frontend_footer"}
+
+{$template_option.bootstrap}
 {if $is_embedded != true}
 </body>
 </html>
