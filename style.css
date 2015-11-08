@@ -1,3 +1,7 @@
+@media (max-width: @screen-xs) {
+   h4{font-size: 8px;}
+}
+ 
 .calltoaction-wrapper {
   text-align: center;
 }
@@ -36,60 +40,15 @@ margin-right:10px;
 margin-bottom:10px;
 margin-top:5px;
 }
-.show-grid [class^="col-"]
-{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: rgba(86, 61, 124, 0.15);
-  border-top-width: 1px;
-  border-right-width: 1px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-top-style: solid;
-  border-right-style: solid;
-  border-bottom-style: solid;
-  border-left-style: solid;
-  border-top-color: rgba(86, 61, 124, 0.2);
-  border-right-color: rgba(86, 61, 124, 0.2);
-  border-bottom-color: rgba(86, 61, 124, 0.2);
-  border-left-color: rgba(86, 61, 124, 0.2);
-  border-image-source: none;
-  border-image-slice: 100% 100% 100% 100%;
-  border-image-width: 1 1 1 1;
-  border-image-outset: 0 0 0 0;
-  border-image-repeat: stretch stretch;
-} 
-
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
-	color: #fff;
-	background-color: #337AB7;
-}
-.navbar-nav > li > .dropdown-menu {
- color: #fff;
-	background-color: #337AB7;
-}
-.dropdown-menu {
- color: #fff;
-}
-.dropdown-menu > li > a {
-	color: #CCCCCC; 
-}
+ 
+ 
 .schwarz {color: red;}
-.navbar-default .navbar-brand {
-	color: #fff;
-}
-.navbar-default .navbar-nav > li > a {
-	 color: #337AB7; 
-}
+ 
 .maxPicHeight {
 	max-height: 110px; }
 	
 	
-.navbar-nav > li > .dropdown-menu { background-color: #245680; }	
-.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
-    color: #fff;
-    background-color: transparent;
-}
+ 
 	
 	/* *********************************
            Variables
@@ -112,41 +71,15 @@ $small-logo-padding: 2px; // of bottom padding to look nice
 /* *********************************
    Some Style Overrides on Bootstrap
   ********************************** */
-.navbar-inverse {
-   background: rgba(62,195,246,0);
-  border-bottom: none;
-}
-.navbar-inverse .navbar-toggle {
-  border: 1px solid #333;
-  border-color: rgba(255,255,255,0.7);
-}
+ 
+ 
 
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
    border-color: transparent;
-  @media (max-width: 767px) {
-    background: rgba(255,255,255,0.75);
-  }
-}
-.navbar-inverse .navbar-nav > li > a {
-color: black;
   
-
-}
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-color: #22F;
- 
-}
-ul.nav {
 }
  
-.navbar-default {
-    background-color: #FFF;
-    border-color: #CCC;
-	color: #FFF;
-}
-.navbar {
-	background:#111;
-}
+  
 @media(min-width:767px) {
     .navbar {
         padding: 20px 0;
@@ -160,10 +93,7 @@ ul.nav {
     }
 }
 
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-    background-color: #aec62c;
-    color: #fff;
-}
+ 
 
 
 
@@ -206,16 +136,8 @@ ul.nav {
     border-bottom-color: @clouds;
     color: @clouds;
 }
-.navbar-default .navbar-nav > li > a:hover .caret {
-    border-top-color: #333;
-    border-bottom-color: #333;
-}
-.navbar-default .navbar-nav > .open > a .caret, 
-.navbar-default .navbar-nav > .open > a:hover .caret,  
-.navbar-default .navbar-nav > .open > a:focus .caret {
-    border-top-color: #555;
-    border-bottom-color: #555;
-}
+ 
+ 
 
 
 
@@ -270,4 +192,52 @@ ul.nav {
   -moz-box-shadow: 0 -1px 12px rgba(0,0,0,0.4);
   box-shadow: 0 -1px 12px rgba(0,0,0,0.4);
   color: 0 -1px 12px rgba(0,0,0,0.4);
+}
+
+.footer  a, .footer a:hover {
+   color: #fff;
+}
+
+
+.pad0 {padding-top: 1px;
+
+padding-left: 1px;
+}
+.bo2 {  padding-top:20px;}
+
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.thumbnail > h4 {
+    padding: 7px 5px 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.thumbnail h4 .info {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 0.6em;
+    padding-left: 15px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 4px;
+    border-radius: 0px;
+    border-bottom-left-radius: 5px;
+    cursor:  pointer;
+}
+
+.thumbnail h4 .info > span {
+    margin-right: 10px;   
+}
+
+.thumbnail img {
+    width: 100%;
+}
+.thumbnail a.btn {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 }
