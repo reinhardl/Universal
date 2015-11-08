@@ -1,5 +1,6 @@
-Universal
-not finished
+Universal 
+  based on the HTML Template BASICA! from http://www.vactualart.com/
+Status: not finished
 Template for Serendipity
 s9y.org
 
