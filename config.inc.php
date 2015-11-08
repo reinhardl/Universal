@@ -150,6 +150,23 @@ $serendipity['smarty']->assign_by_ref('kategorien', $kategorien);
 
  
 $template_config = array(
+	array(
+       'var' => 'bootstrap',
+       'name' => THEME_BOOTSTRAP,
+       'type' => 'select',
+       'default' => 'bootstrap',
+       'select_values' => array('bootstrap' => 'Bootstrap',
+								'bootstrap.min.mint' => 'Cool Mint',
+								'bootstrap.min.ligtgreen' => 'Green World',
+ 								'bootstrap.min.violett' => 'Violett Diskret',
+								'bootstrap.min.green' => 'Blue',
+								'bootstrap.min.olive' => 'Olive',
+								'bootstrap.min.yellow' => 'Citro',	
+								'bootstrap.min.red' => 'Red is Black',									
+								'bootstrap.min.gold' => 'Dark Gold',
+								'bootstrap.min.darknight' => 'Dark Night',
+								'bootstrap.min.blue' => 'Blue Water' )
+   ),
     array(
         'var'           => 'startpagerows_enable',
         'name'          => STARTPAGEROWS_ENABLE,
@@ -169,16 +186,13 @@ $template_config = array(
         'name'          => LATEST_POST_ENABLE,
         'type'          => 'boolean',
         'default'       => false,
-    ), 
-	
+    ), 	
 	    array(
         'var'           => 'latestPost_description',
         'name'          => LATESTPOST_DESCRIPTION,
         'type'          => 'content',
         'default'       =>  LATESTPOST_DESCRIPTION,
-    ),	
-	
-	
+    ),			
      array(
       'var'           => 'latestPost_cat1',
       'name'          => LATEST_POST_CAT1,
@@ -739,7 +753,7 @@ for ($i = 0; $i < $template_loaded_config['worker1_amount']; $i++) {
  
 $template_config_groups 	= array(
     THEME_README        	=> array('theme_instructions'),
-    THEME_PAGE_OPTIONS  	=> array('home_link_text', 'show_rightsidebar','date_format', 'comment_time_format','show_comment_link', 'categories_on_archive','show_pic_in_archive', 'tags_on_archive', 'copyright'),  
+    THEME_PAGE_OPTIONS  	=> array('bootstrap','home_link_text', 'show_rightsidebar','date_format', 'comment_time_format','show_comment_link', 'categories_on_archive','show_pic_in_archive', 'tags_on_archive', 'copyright'),  
 	THEME_LEAD_CAT			=> $lead_cat_collapse,
 	THEME_STARTSEITE 		=>  $startpagerows_collapse,
 	THEME_LATESTPOSTS       => $latestPosts_collapse,
