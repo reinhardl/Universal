@@ -1,10 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
-body {
-    margin: 5px 20px;
-         font-family: 'Open Sans'; 
-    font-weight: 300; 
-}
-
+ 
 
 
 p.footer {
@@ -126,11 +120,17 @@ p.footer {
     padding: 0 15px;
     color: #4679bd;
 }
+.timeline-body {
+color:#000;
+padding-left:10px;
+}
+
 .timeline-body > p, .timeline-body > ul {
     padding: 10px 15px;
     margin-bottom: 0;
 }
 .timeline-footer {
+color:#000;
     padding: 5px 15px;
     background-color:#f4f4f4;
 }
