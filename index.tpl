@@ -20,8 +20,8 @@
        <link rel="canonical" href="{$serendipityBaseURL}">
     {/if}    
 {* BOOTSTRAP CORE CSS  *}
-   {if $template_option.bootstrap =="bootstrap"}    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">  {else} <link href="/templates/Universal-master/css/{$template_option.bootstrap}.css" rel="stylesheet">
-   <link href="/templates/Universal-master/css/glyphicon.css" rel="stylesheet">{/if}   
+   {if $template_option.bootstrap =="bootstrap"}    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">  {else} <link href="/templates/{$template}/css/{$template_option.bootstrap}.css" rel="stylesheet">
+   <link href="/templates/{$template}/css/glyphicon.css" rel="stylesheet">{/if}   
 {* S9Y CSS *}
     <link rel="stylesheet" href="{$head_link_stylesheet}"> 
     <link rel="alternate" type="application/rss+xml" title="{$blogTitle} RSS feed" href="{$serendipityBaseURL}{$serendipityRewritePrefix}feeds/index.rss2">
@@ -42,11 +42,11 @@
    
 {* HEADER IMAGE *}
    {if $startpage =='true' && $view == 'start' && $staticpage_pagetitle == '' } 
-   <link href="{$serendipityBaseURL}/templates/Universal-master/css/Mitarbeiter.css" rel="stylesheet">  
-   <link href="{$serendipityBaseURL}/templates/Universal-master/css/mySlider.css" rel="stylesheet">   
-   <link href="{$serendipityBaseURL}/templates/Universal-master/css/RowHoverAnimation.css" rel="stylesheet">
+   <link href="{$serendipityBaseURL}templates/{$template}/css/Mitarbeiter.css" rel="stylesheet">  
+   <link href="{$serendipityBaseURL}templates/{$template}/css/mySlider.css" rel="stylesheet">   
+   <link href="{$serendipityBaseURL}templates/{$template}/css/RowHoverAnimation.css" rel="stylesheet">
      {/if}
- <link href="{$serendipityBaseURL}/templates/Universal-master/css/ResponsiveTimeline.css" rel="stylesheet">   
+ <link href="{$serendipityBaseURL}templates/{$template}/css/ResponsiveTimeline.css" rel="stylesheet">   
     {serendipity_hookPlugin hook="frontend_header"}
     <script src="{$head_link_script}"></script>
 </head>
@@ -242,21 +242,23 @@
 	 
 	
 	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="/templates/Universal-master/js/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="/templates/Universal-master/js/bootstrap.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{$serendipityHTTPPath}templates/{$template}/js/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="{$serendipityHTTPPath}templates/{$template}/js/bootstrap.min.js"></script>
 	
-	<script src="{$serendipityBaseURL}/templates/Universal-master/js/mySlider.js"></script>
-		<script src="{$serendipityBaseURL}/templates/Universal-master/js/bootstrap-cookie-consent.js"></script>
+	<script src="{$serendipityBaseURL}/templates/{$template}/js/mySlider.js"></script>
+		<script src="{$serendipityBaseURL}templates/{$template}/js/bootstrap-cookie-consent.js"></script>
 			<!-- Scrolling Nav JavaScript -->
-		<script src="{$serendipityBaseURL}/templates/Universal-master/js/jquery.easing.1.3.js"></script>
-		<script src="{$serendipityBaseURL}/templates/Universal-master/js/navigation-easy.js"></script>	
+		<script src="{$serendipityBaseURL}templates/{$template}/js/jquery.easing.1.3.js"></script>
+		<script src="{$serendipityBaseURL}templates/{$template}/js/navigation-easy.js"></script>	
   {* FOOTER  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> *} 
  
 {/if}
 {$raw_data}
 {serendipity_hookPlugin hook="frontend_footer"}
 
-{$template_option.bootstrap}
+{$template_option.bootstrap}<br/>
+{$template}=$serendipityBaseURL<br/>
+{$serendipityBaseURL}=$serendipityBaseURL
 {if $is_embedded != true}
 </body>
 </html>
